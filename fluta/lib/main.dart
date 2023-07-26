@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily: 'Open Sans',
 
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),

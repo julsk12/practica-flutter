@@ -14,7 +14,7 @@ class _LoginPageState extends State<LoginPage> {
       body:Container(
         color: Colors.white,
         child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
 // Parte superior: Imagen
@@ -28,31 +28,52 @@ class _LoginPageState extends State<LoginPage> {
           Padding(
             padding: EdgeInsets.all(16.0),
             child: Text(
-              'Bienvenido a EasySeat. '
-                  'Inicia sesión para acceder a tu cuenta y disfrutar de nuestros servicios de alquiler de sillas.',
+              'Bienvenido a EasySeat. ',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 16),
+              style: TextStyle(fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Open Sans',
+              ),
             ),
           ),
 // Botones para registro y login
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                onPressed: () {
-// Acción al presionar el botón de registro
-// Aquí puedes redirigir a la pantalla de registro
-                },
-                child: Text('Registro'),
-              ),
-              SizedBox(width: 16), // Espacio entre los botones
-              ElevatedButton(
-                onPressed: () {
-// Acción al presionar el botón de login
-// Aquí puedes redirigir a la pantalla de login
-                },
-                child: Text('Login'),
-              ),
+            children: [ GestureDetector(
+              onHorizontalDragEnd: (details){
+                if(details.primaryVelocity !> 0){
+                  // _redirectToLogin();
+                }else if (details.primaryVelocity !< 0){
+                  // -redirectToRegister();
+
+                }
+              },
+            )
+//               ElevatedButton(
+//                 onPressed: () {
+// // Acción al presionar el botón de registro
+// // Aquí puedes redirigir a la pantalla de registro
+//                 },
+//                 style: ElevatedButton.styleFrom(
+//                   primary: Colors.black,
+//                   onPrimary: Colors.white,
+//                   elevation: 5,
+//                   minimumSize: Size(150, 50),
+//                   shape: RoundedRectangleBorder(
+//                     borderRadius:BorderRadius.circular(10),
+//
+//                   ),
+//                 ),
+//                 child: Text('Registro'),
+//               ),
+//               SizedBox(width: 16), // Espacio entre los botones
+//               ElevatedButton(
+//                 onPressed: () {
+// // Acción al presionar el botón de login
+// // Aquí puedes redirigir a la pantalla de login
+//                 },
+//                 child: Text('Login'),
+//               ),
             ],
           ),
         ],
