@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyRegister extends StatefulWidget {
-  static String dy = 'login_login';
+  static String dy = 'MyRegister';
 
   @override
   State<MyRegister> createState() => _MyRegisterState();
@@ -24,7 +24,7 @@ class _MyRegisterState extends State<MyRegister> {
                   padding: EdgeInsets.symmetric(horizontal: 0),
                   margin: EdgeInsets.only(top: 70, bottom: 30),
                   child: Text(
-                    '¡Inicia sesion!',
+                    '¡Registrate para ver más contenidos!',
                     textAlign: TextAlign.start,
                     style: TextStyle(
                       fontSize: 25,
@@ -38,7 +38,7 @@ class _MyRegisterState extends State<MyRegister> {
                 padding: EdgeInsets.symmetric(horizontal: 0),
                 margin: EdgeInsets.only(top: 0, bottom: 30),
                 child: Text(
-                  'Bienvenido de vuelta. Inicia sesión para ver las novedades.',
+                  'Para crear su cuenta ingrese todos su datos',
                   textAlign: TextAlign.start,
                   style: TextStyle(
                     fontSize: 20,
@@ -52,7 +52,8 @@ class _MyRegisterState extends State<MyRegister> {
                 child: Divider(
                   color: Colors.white,
                 ),
-              ),TextField(
+              ),
+              TextField(
                 style: TextStyle(
                     fontSize: 16.0,
                     fontFamily: 'Open Sans',
@@ -60,8 +61,10 @@ class _MyRegisterState extends State<MyRegister> {
                 enableInteractiveSelection: false,
                 decoration: InputDecoration(
                     hintText: 'Nombre completo',
-                    hintStyle:
-                    TextStyle(color: Colors.white, fontFamily: 'Open sans'),
+                    hintStyle: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'Open sans',
+                        fontWeight: FontWeight.bold),
                     labelText: 'Nombre completo',
                     filled: true,
                     fillColor: Colors.black,
@@ -69,96 +72,12 @@ class _MyRegisterState extends State<MyRegister> {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),
-                    contentPadding:
-                    EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
-              ),
-              Divider(
-                height: 15.0,
-              ),TextField(
-                style: TextStyle(
-                    fontSize: 16.0,
-                    fontFamily: 'Open Sans',
-                    color: Colors.white),
-                enableInteractiveSelection: false,
-                decoration: InputDecoration(
-                    hintText: 'Identificación',
-                    hintStyle:
-                    TextStyle(color: Colors.white, fontFamily: 'Open sans'),
-                    labelText: 'Identificación',
-                    filled: true,
-                    fillColor: Colors.black,
-                    focusColor: Colors.grey[700],
-                    border: OutlineInputBorder(
+                    enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
+                      borderSide: BorderSide(color: Colors.white),
                     ),
                     contentPadding:
-                    EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
-              ),
-              Divider(
-                height: 15.0,
-              ),TextField(
-                style: TextStyle(
-                    fontSize: 16.0,
-                    fontFamily: 'Open Sans',
-                    color: Colors.white),
-                enableInteractiveSelection: false,
-                decoration: InputDecoration(
-                    hintText: 'Fecha de nacimiento',
-                    hintStyle:
-                    TextStyle(color: Colors.white, fontFamily: 'Open sans'),
-                    labelText: 'Fecha de nacimiento',
-                    filled: true,
-                    fillColor: Colors.black,
-                    focusColor: Colors.grey[700],
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    contentPadding:
-                    EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
-              ),
-              Divider(
-                height: 15.0,
-              ),TextField(
-                style: TextStyle(
-                    fontSize: 16.0,
-                    fontFamily: 'Open Sans',
-                    color: Colors.white),
-                enableInteractiveSelection: false,
-                decoration: InputDecoration(
-                    hintText: 'Celular',
-                    hintStyle:
-                    TextStyle(color: Colors.white, fontFamily: 'Open sans'),
-                    labelText: 'Celular',
-                    filled: true,
-                    fillColor: Colors.black,
-                    focusColor: Colors.grey[700],
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    contentPadding:
-                    EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
-              ),
-              Divider(
-                height: 15.0,
-              ),TextField(
-                style: TextStyle(
-                    fontSize: 16.0,
-                    fontFamily: 'Open Sans',
-                    color: Colors.white),
-                enableInteractiveSelection: false,
-                decoration: InputDecoration(
-                    hintText: 'Correo',
-                    hintStyle:
-                    TextStyle(color: Colors.white, fontFamily: 'Open sans'),
-                    labelText: 'Correo o celular',
-                    filled: true,
-                    fillColor: Colors.black,
-                    focusColor: Colors.grey[700],
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    contentPadding:
-                    EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
+                        EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
               ),
               Divider(
                 height: 15.0,
@@ -170,10 +89,10 @@ class _MyRegisterState extends State<MyRegister> {
                     color: Colors.white),
                 enableInteractiveSelection: false,
                 decoration: InputDecoration(
-                    hintText: 'Correo o numero de telefono',
+                    hintText: 'Identificación',
                     hintStyle:
-                    TextStyle(color: Colors.white, fontFamily: 'Open sans'),
-                    labelText: 'Correo o celular',
+                        TextStyle(color: Colors.white, fontFamily: 'Open sans'),
+                    labelText: 'Identificación',
                     filled: true,
                     fillColor: Colors.black,
                     focusColor: Colors.grey[700],
@@ -181,7 +100,76 @@ class _MyRegisterState extends State<MyRegister> {
                       borderRadius: BorderRadius.circular(30),
                     ),
                     contentPadding:
-                    EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
+                        EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
+              ),
+              Divider(
+                height: 15.0,
+              ),
+              TextField(
+                style: TextStyle(
+                    fontSize: 16.0,
+                    fontFamily: 'Open Sans',
+                    color: Colors.white),
+                enableInteractiveSelection: false,
+                decoration: InputDecoration(
+                    hintText: 'Fecha de nacimiento',
+                    hintStyle:
+                        TextStyle(color: Colors.white, fontFamily: 'Open sans'),
+                    labelText: 'Fecha de nacimiento',
+                    filled: true,
+                    fillColor: Colors.black,
+                    focusColor: Colors.grey[700],
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
+              ),
+              Divider(
+                height: 15.0,
+              ),
+              TextField(
+                style: TextStyle(
+                    fontSize: 16.0,
+                    fontFamily: 'Open Sans',
+                    color: Colors.white),
+                enableInteractiveSelection: false,
+                decoration: InputDecoration(
+                    hintText: 'Celular',
+                    hintStyle:
+                        TextStyle(color: Colors.white, fontFamily: 'Open sans'),
+                    labelText: 'Celular',
+                    filled: true,
+                    fillColor: Colors.black,
+                    focusColor: Colors.grey[700],
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
+              ),
+              Divider(
+                height: 15.0,
+              ),
+              TextField(
+                style: TextStyle(
+                    fontSize: 16.0,
+                    fontFamily: 'Open Sans',
+                    color: Colors.white),
+                enableInteractiveSelection: false,
+                decoration: InputDecoration(
+                    hintText: 'Correo electronico',
+                    hintStyle:
+                        TextStyle(color: Colors.white, fontFamily: 'Open sans'),
+                    labelText: 'Correo electronico',
+                    filled: true,
+                    fillColor: Colors.black,
+                    focusColor: Colors.grey[700],
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
               ),
               Divider(
                 height: 15.0,
@@ -196,7 +184,7 @@ class _MyRegisterState extends State<MyRegister> {
                 decoration: InputDecoration(
                     hintText: 'Contraseña',
                     hintStyle:
-                    TextStyle(color: Colors.white, fontFamily: 'Open sans'),
+                        TextStyle(color: Colors.white, fontFamily: 'Open sans'),
                     labelText: 'Contraseña',
                     filled: true,
                     fillColor: Colors.black,
@@ -205,13 +193,29 @@ class _MyRegisterState extends State<MyRegister> {
                       borderRadius: BorderRadius.circular(30),
                     ),
                     contentPadding:
-                    EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
+                        EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
               ),
               Divider(
                 height: 15.0,
               ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 0),
+                margin: EdgeInsets.only(top: 0, bottom: 30),
+                child: Text(
+                  '¿Ya tienes una cuenta? Inicia sesión',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 16.5,
+                    fontFamily: 'Open Sans',
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+              Divider(
+                height: 0.0,
+                color: Colors.white,
+              ),
               Column(
-
                 children: [
                   SizedBox(
                     width: 300,
@@ -222,7 +226,7 @@ class _MyRegisterState extends State<MyRegister> {
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                       child: Text(
-                        'Iniciar sesion',
+                        'Registrarse',
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'Open Sans',
@@ -231,7 +235,6 @@ class _MyRegisterState extends State<MyRegister> {
                         ),
                       ),
                       backgroundColor: Colors.black,
-
                     ),
                   ),
                 ],

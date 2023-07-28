@@ -1,4 +1,5 @@
 import 'package:algo/src/loginpage.dart';
+import 'package:algo/src/register.dart';
 import 'package:flutter/material.dart';
 import 'package:algo/src/login.dart';
 
@@ -19,9 +20,9 @@ class MyApp extends StatelessWidget {
 
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: LoginLogin.liv,
+      initialRoute: MyRegister.dy,
       routes: {
-        LoginLogin.liv: (context) => LoginLogin(),
+        MyRegister.dy: (context) => MyRegister(),
       },
     );
   }
