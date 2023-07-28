@@ -66,7 +66,7 @@ class _LoginLoginState extends State<LoginLogin> {
                     labelText: 'Correo o celular',
                     filled: true,
                     fillColor: Colors.black,
-                    focusColor: Colors.grey[700],
+
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),
@@ -90,7 +90,6 @@ class _LoginLoginState extends State<LoginLogin> {
                     labelText: 'Contraseña',
                     filled: true,
                     fillColor: Colors.black,
-                    focusColor: Colors.grey[700],
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),
