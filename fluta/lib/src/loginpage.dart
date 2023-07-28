@@ -58,23 +58,30 @@ class _LoginLoginState extends State<LoginLogin> {
                     fontSize: 16.0,
                     fontFamily: 'Open Sans',
                     color: Colors.white),
+
                 enableInteractiveSelection: false,
+                autofocus: true,
                 decoration: InputDecoration(
                     hintText: 'Correo o numero de telefono',
-                    hintStyle:
-                        TextStyle(color: Colors.white, fontFamily: 'Open sans'),
                     labelText: 'Correo o celular',
+                    focusColor: Colors.grey,
                     filled: true,
                     fillColor: Colors.black,
+                    hintStyle:
+                    TextStyle(color: Colors.white, fontFamily: 'Open sans', fontWeight: FontWeight.bold),
 
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
+                    ),
+                    disabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white)
                     ),
                     contentPadding:
                         EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
               ),
               Divider(
                 height: 15.0,
+                color: Colors.white,
               ),
               TextField(
                 obscureText: true,
@@ -86,21 +93,43 @@ class _LoginLoginState extends State<LoginLogin> {
                 decoration: InputDecoration(
                     hintText: 'Contraseña',
                     hintStyle:
-                        TextStyle(color: Colors.white, fontFamily: 'Open sans'),
+                        TextStyle(color: Colors.white, fontFamily: 'Open sans', fontWeight: FontWeight.bold),
                     labelText: 'Contraseña',
                     filled: true,
                     fillColor: Colors.black,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
+                      // borderSide: BorderSide(color: Colors.white)
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide(color: Colors.white)
                     ),
                     contentPadding:
                         EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
               ),
               Divider(
-                height: 350.0,
+                height: 330.0,
+                color: Colors.white,
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 0),
+                margin: EdgeInsets.only(top: 0, bottom: 30),
+                child: Text(
+                  '¿No tienes cuenta? Registrate',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 16.5,
+                    fontFamily: 'Open Sans',
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+              Divider(
+                height: 0.0,
+                color: Colors.white,
               ),
               Column(
-
                 children: [
                   SizedBox(
                     width: 300,
