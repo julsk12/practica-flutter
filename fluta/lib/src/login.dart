@@ -11,72 +11,99 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Container(
+      body: Container(
         color: Colors.white,
         child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-// Parte superior: Imagen
-          Image.network(
-            'https://www.experimenta.es/wp-content/uploads/2020/04/Ana-Hill-800x600.jpg',
-            height: 300,
-            width: double.infinity,
-            fit: BoxFit.cover,
-          ),
-// Párrafo de bienvenida
-          Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text(
-              'Bienvenido a EasySeat. ',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 25,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/images/loginregister.jpeg',
+              height: 300,
+              width: double.infinity,
+              fit: BoxFit.cover,
+            ),
+            Padding(
+              padding: EdgeInsets.all(0.0),
+              child: Text(
+                'Bienvenido a EasySeat. ',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 25.5,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Open Sans',
+                ),
               ),
             ),
-          ),
-// Botones para registro y login
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [ GestureDetector(
-              onHorizontalDragEnd: (details){
-                if(details.primaryVelocity !> 0){
-                  // _redirectToLogin();
-                }else if (details.primaryVelocity !< 0){
-                  // -redirectToRegister();
+            Align(
+              alignment: Alignment.topCenter,
 
-                }
-              },
-            )
-//               ElevatedButton(
-//                 onPressed: () {
-// // Acción al presionar el botón de registro
-// // Aquí puedes redirigir a la pantalla de registro
-//                 },
-//                 style: ElevatedButton.styleFrom(
-//                   primary: Colors.black,
-//                   onPrimary: Colors.white,
-//                   elevation: 5,
-//                   minimumSize: Size(150, 50),
-//                   shape: RoundedRectangleBorder(
-//                     borderRadius:BorderRadius.circular(10),
-//
-//                   ),
-//                 ),
-//                 child: Text('Registro'),
-//               ),
-//               SizedBox(width: 16), // Espacio entre los botones
-//               ElevatedButton(
-//                 onPressed: () {
-// // Acción al presionar el botón de login
-// // Aquí puedes redirigir a la pantalla de login
-//                 },
-//                 child: Text('Login'),
-//               ),
-            ],
-          ),
-        ],
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 25),
+                margin: EdgeInsets.only(top: 25, bottom: 200),
+                child: Text(
+                  'Inicia sesión para acceder a tu cuenta y disfrutar de nuestros servicios de alquiler de sillas.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontFamily: 'Open Sans',
+                  ),
+                ),
+              ),
+            ),
+// Botones para registro y login
+            Row(
+              // width: double.infinity,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  onHorizontalDragEnd: (details) {
+                    if (details.primaryVelocity! > 0) {
+                      // _redirectToLogin(); // Redirigir a la página de login
+                    } else if (details.primaryVelocity! < 0) {
+                      // _redirectToRegister(); // Redirigir a la página de registro
+                    }
+                  },
+                  child: Container(
+                    height: 55,
+                    width: 170,
+                    padding: EdgeInsets.symmetric(vertical: 12, horizontal: 50.5),
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.horizontal(left: Radius.circular(30) , right: Radius.zero),
+                    ),
+                    child: Text(
+                      'Login',
+                      style: TextStyle(color: Colors.white, fontSize: 16.5, fontFamily: 'Open Sans', fontWeight: FontWeight.bold,),
+                    ),
+                  ),
+                ),
+                // SizedBox(width: 20), // Espacio entre los botones
+                GestureDetector(
+                  onHorizontalDragEnd: (details) {
+                    if (details.primaryVelocity! > 0) {
+                      // _redirectToLogin(); // Redirigir a la página de login
+                    } else if (details.primaryVelocity! < 0) {
+                      // _redirectToRegister(); // Redirigir a la página de registro
+                    }
+                  },
+                  child: Container(
+                    height: 55,
+                    width: 170,
+                    padding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.horizontal(left: Radius.zero , right: Radius.circular(30)),
+                    ),
+                    child: Text(
+                      'Registro',
+                      style: TextStyle(color: Colors.white, fontSize: 16.5, fontFamily: 'Open Sans', fontWeight: FontWeight.bold,),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
