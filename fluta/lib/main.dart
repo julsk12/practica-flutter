@@ -1,7 +1,8 @@
+import 'package:algo/src/login.dart';
 import 'package:algo/src/loginpage.dart';
 import 'package:algo/src/register.dart';
 import 'package:flutter/material.dart';
-import 'package:algo/src/login.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -20,9 +21,12 @@ class MyApp extends StatelessWidget {
 
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: MyRegister.dy,
+      initialRoute: LoginPage.id,
       routes: {
+        LoginPage.id: (context) => LoginPage(),
+        LoginLogin.liv: (context) => LoginLogin(),
         MyRegister.dy: (context) => MyRegister(),
+
       },
     );
   }

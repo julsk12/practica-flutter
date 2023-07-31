@@ -1,3 +1,4 @@
+import 'package:algo/src/login.dart';
 import 'package:flutter/material.dart';
 
 class LoginLogin extends StatefulWidget {
@@ -16,13 +17,23 @@ class _LoginLoginState extends State<LoginLogin> {
         padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 40.0),
         children: <Widget>[
           Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 0),
+                margin: EdgeInsets.only(top: 20, bottom: 0, right: 400, left: 0),
+                child: IconButton(
+                  icon: Icon(Icons.arrow_back),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+              ),
+              ),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 0),
-                  margin: EdgeInsets.only(top: 70, bottom: 30),
+                  margin: EdgeInsets.only(top: 10, bottom: 30),
                   child: Text(
                     '¡Inicia sesion!',
                     textAlign: TextAlign.start,
@@ -74,10 +85,10 @@ class _LoginLoginState extends State<LoginLogin> {
                       borderRadius: BorderRadius.circular(30),
                     ),
                     disabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white)
+                        borderSide: BorderSide(color: Colors.white)
                     ),
                     contentPadding:
-                        EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
+                    EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
               ),
               Divider(
                 height: 15.0,
@@ -93,7 +104,7 @@ class _LoginLoginState extends State<LoginLogin> {
                 decoration: InputDecoration(
                     hintText: 'Contraseña',
                     hintStyle:
-                        TextStyle(color: Colors.white, fontFamily: 'Open sans', fontWeight: FontWeight.bold),
+                    TextStyle(color: Colors.white, fontFamily: 'Open sans', fontWeight: FontWeight.bold),
                     labelText: 'Contraseña',
                     filled: true,
                     fillColor: Colors.black,
@@ -106,7 +117,7 @@ class _LoginLoginState extends State<LoginLogin> {
                         borderSide: BorderSide(color: Colors.white)
                     ),
                     contentPadding:
-                        EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
+                    EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
               ),
               Divider(
                 height: 330.0,

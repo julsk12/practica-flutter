@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:algo/src/register.dart';
+import 'package:algo/src/loginpage.dart';
 
-class LoginPage extends StatefulWidget {
+class LoginPage extends StatelessWidget {
   static String id = 'login_page';
 
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +21,7 @@ class _LoginPageState extends State<LoginPage> {
               fit: BoxFit.cover,
             ),
             Padding(
-              padding: EdgeInsets.all(0.0),
+              padding: EdgeInsets.all(16.0),
               child: Text(
                 'Bienvenido a EasySeat. ',
                 textAlign: TextAlign.center,
@@ -35,73 +32,69 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            Align(
-              alignment: Alignment.topCenter,
-
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 25),
-                margin: EdgeInsets.only(top: 25, bottom: 200),
-                child: Text(
-                  'Inicia sesión para acceder a tu cuenta y disfrutar de nuestros servicios de alquiler de sillas.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontFamily: 'Open Sans',
-                  ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25),
+              child: Text(
+                'Inicia sesión para acceder a tu cuenta y disfrutar de nuestros servicios de alquiler de sillas.',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontFamily: 'Open Sans',
                 ),
               ),
             ),
-// Botones para registro y login
-            Row(
-              // width: double.infinity,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                GestureDetector(
-                  onHorizontalDragEnd: (details) {
-                    if (details.primaryVelocity! > 0) {
-                      // _redirectToLogin(); // Redirigir a la página de login
-                    } else if (details.primaryVelocity! < 0) {
-                      // _redirectToRegister(); // Redirigir a la página de registro
-                    }
-                  },
-                  child: Container(
-                    height: 55,
-                    width: 170,
-                    padding: EdgeInsets.symmetric(vertical: 12, horizontal: 50.5),
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.horizontal(left: Radius.circular(30) , right: Radius.zero),
-                    ),
-                    child: Text(
-                      'Login',
-                      style: TextStyle(color: Colors.white, fontSize: 16.5, fontFamily: 'Open Sans', fontWeight: FontWeight.bold,),
-                    ),
-                  ),
-                ),
-                // SizedBox(width: 20), // Espacio entre los botones
-                GestureDetector(
-                  onHorizontalDragEnd: (details) {
-                    if (details.primaryVelocity! > 0) {
-                      // _redirectToLogin(); // Redirigir a la página de login
-                    } else if (details.primaryVelocity! < 0) {
-                      // _redirectToRegister(); // Redirigir a la página de registro
-                    }
-                  },
-                  child: Container(
-                    height: 55,
-                    width: 170,
-                    padding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.horizontal(left: Radius.zero , right: Radius.circular(30)),
-                    ),
-                    child: Text(
-                      'Registro',
-                      style: TextStyle(color: Colors.white, fontSize: 16.5, fontFamily: 'Open Sans', fontWeight: FontWeight.bold,),
+            // Botones para registro y login
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 25),
+              margin: EdgeInsets.only(top: 200, bottom: 10),
+
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, MyRegister.dy);
+                    },
+                    child: Text('Registrarse'),
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.black, // Color de fondo del botón
+                      onPrimary: Colors.white, // Color del texto del botón
+                      textStyle: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'Open Sans',
+                      ),
+                      padding:
+                          EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.horizontal(
+                            left: Radius.circular(30), right: Radius.zero),
+                      ),
+                      fixedSize: Size(150, 50),
                     ),
                   ),
-                ),
-              ],
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, LoginLogin.liv);
+                    },
+                    child: Text('Login'),
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.black, // Color de fondo del botón
+                      onPrimary: Colors.white, // Color del texto del botón
+                      textStyle: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'Open Sans',
+                      ),
+                      padding:
+                          EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.horizontal(
+                            left: Radius.zero, right: Radius.circular(30)),
+                      ),
+                      fixedSize: Size(150, 50),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
