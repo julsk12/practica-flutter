@@ -8,19 +8,18 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Inicio'), // Título de la página de inicio
+        backgroundColor: Colors.black,
+        title: Text('Inicio',
+        style: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+          fontFamily: 
+        ),), // Título de la página de inicio
         actions: [
           IconButton(
             icon: Icon(Icons.search),
             onPressed: () {
               // Lógica para realizar la búsqueda
-            },
-          ),
-          IconButton(
-            icon: Icon(Icons.menu),
-            onPressed: () {
-              // Abre el menú lateral
-              Scaffold.of(context).openDrawer();
             },
           ),
         ],
