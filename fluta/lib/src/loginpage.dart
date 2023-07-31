@@ -1,4 +1,5 @@
 import 'package:algo/src/login.dart';
+import 'package:algo/src/register.dart';
 import 'package:flutter/material.dart';
 
 class LoginLogin extends StatefulWidget {
@@ -21,13 +22,17 @@ class _LoginLoginState extends State<LoginLogin> {
             children: [
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 0),
-                margin: EdgeInsets.only(top: 20, bottom: 0, right: 400, left: 0),
-                child: IconButton(
-                  icon: Icon(Icons.arrow_back),
+                margin: EdgeInsets.only(top: 20, bottom: 0, right: 340, left: 0),
+                child: FloatingActionButton(
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.pop(context, "/");
                   },
-              ),
+                  child: Image.asset('assets/images/flecha-izquierda.png',
+                    width: 20,
+                  height: 20,),
+                  backgroundColor: Colors.transparent,
+                  elevation: 0,
+                ),
               ),
               Align(
                 alignment: Alignment.centerLeft,
@@ -69,7 +74,6 @@ class _LoginLoginState extends State<LoginLogin> {
                     fontSize: 16.0,
                     fontFamily: 'Open Sans',
                     color: Colors.white),
-
                 enableInteractiveSelection: false,
                 autofocus: true,
                 decoration: InputDecoration(
@@ -78,17 +82,17 @@ class _LoginLoginState extends State<LoginLogin> {
                     focusColor: Colors.grey,
                     filled: true,
                     fillColor: Colors.black,
-                    hintStyle:
-                    TextStyle(color: Colors.white, fontFamily: 'Open sans', fontWeight: FontWeight.bold),
-
+                    hintStyle: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'Open sans',
+                        fontWeight: FontWeight.bold),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),
                     disabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white)
-                    ),
+                        borderSide: BorderSide(color: Colors.white)),
                     contentPadding:
-                    EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
+                        EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
               ),
               Divider(
                 height: 15.0,
@@ -103,8 +107,10 @@ class _LoginLoginState extends State<LoginLogin> {
                 enableInteractiveSelection: false,
                 decoration: InputDecoration(
                     hintText: 'Contraseña',
-                    hintStyle:
-                    TextStyle(color: Colors.white, fontFamily: 'Open sans', fontWeight: FontWeight.bold),
+                    hintStyle: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'Open sans',
+                        fontWeight: FontWeight.bold),
                     labelText: 'Contraseña',
                     filled: true,
                     fillColor: Colors.black,
@@ -114,10 +120,9 @@ class _LoginLoginState extends State<LoginLogin> {
                     ),
                     enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
-                        borderSide: BorderSide(color: Colors.white)
-                    ),
+                        borderSide: BorderSide(color: Colors.white)),
                     contentPadding:
-                    EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
+                        EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
               ),
               Divider(
                 height: 330.0,
@@ -146,7 +151,10 @@ class _LoginLoginState extends State<LoginLogin> {
                     width: 300,
                     height: 50,
                     child: FloatingActionButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, "/homePage");
+                      },
+
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
                       ),
@@ -160,7 +168,6 @@ class _LoginLoginState extends State<LoginLogin> {
                         ),
                       ),
                       backgroundColor: Colors.black,
-
                     ),
                   ),
                 ],

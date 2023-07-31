@@ -53,7 +53,7 @@ class LoginPage extends StatelessWidget {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, MyRegister.dy);
+                      Navigator.pushNamed(context, "/register");
                     },
                     child: Text('Registrarse'),
                     style: ElevatedButton.styleFrom(
@@ -74,7 +74,7 @@ class LoginPage extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, LoginLogin.liv);
+                      Navigator.pushNamed(context, "/loginPage");
                     },
                     child: Text('Login'),
                     style: ElevatedButton.styleFrom(

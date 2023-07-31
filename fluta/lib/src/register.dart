@@ -15,6 +15,20 @@ class _MyRegisterState extends State<MyRegister> {
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 40.0),
         children: <Widget>[
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 0),
+            margin: EdgeInsets.only(top: 20, bottom: 0, right: 340, left: 0),
+            child: FloatingActionButton(
+              onPressed: () {
+                Navigator.pop(context, "/");
+              },
+              child: Image.asset('assets/images/flecha-izquierda.png',
+                width: 30,
+                height: 30,),
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+            ),
+          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -22,7 +36,7 @@ class _MyRegisterState extends State<MyRegister> {
                 alignment: Alignment.centerLeft,
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 0),
-                  margin: EdgeInsets.only(top: 70, bottom: 30),
+                  margin: EdgeInsets.only(top: 10, bottom: 30),
                   child: Text(
                     '¡Registrate para ver más contenidos!',
                     textAlign: TextAlign.start,

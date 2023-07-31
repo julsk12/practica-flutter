@@ -1,3 +1,4 @@
+import 'package:algo/src/home.dart';
 import 'package:algo/src/login.dart';
 import 'package:algo/src/loginpage.dart';
 import 'package:algo/src/register.dart';
@@ -21,11 +22,12 @@ class MyApp extends StatelessWidget {
 
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: LoginPage.id,
+      initialRoute: "/",
       routes: {
-        LoginPage.id: (context) => LoginPage(),
-        LoginLogin.liv: (context) => LoginLogin(),
-        MyRegister.dy: (context) => MyRegister(),
+        "/": (context) => LoginPage(),
+        "/loginPage": (context) => LoginLogin(),
+        "/register": (context) => MyRegister(),
+        "/homePage": (context) => HomePage(),
 
       },
     );

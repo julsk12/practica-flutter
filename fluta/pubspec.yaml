@@ -63,6 +63,7 @@ flutter:
     - assets/images/Ana-Hill-800x600.jpg
     - assets/images/loginregister.jpeg
     - assets/images/logo.png
+    - assets/images/flecha-izquierda.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
