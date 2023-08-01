@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  final String userName =
-      'John Doe'; // Nombre de usuario (puedes obtenerlo dinámicamente)
+  final String userName = 'John Doe'; // Nombre de usuario (puedes obtenerlo dinámicamente)
   static String iwbf = 'home_page';
 
   @override
@@ -105,16 +104,15 @@ class HomePage extends StatelessWidget {
         body: Container(
           color: Colors.white,
           padding: EdgeInsets.symmetric(horizontal: 25),
-          margin: EdgeInsets.only(top: 200, bottom: 10),
-          width: 1000,
-          height: 2000, // Altura total del contenedor que contiene los botones
+          width: 400,
+          height: 800, // Altura total del contenedor que contiene los botones
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 width: 1000,
                 height: 150,
-                margin: EdgeInsets.only(top: 0, bottom: 100),// Tamaño del primer botón
+                margin: EdgeInsets.only(top: 70, bottom: 80),// Tamaño del primer botón
                 child: FloatingActionButton(
                   onPressed: () {
                     Navigator.pushNamed(context, "/");
@@ -146,9 +144,9 @@ class HomePage extends StatelessWidget {
               ),
               SizedBox(height: 10), // Espacio entre los botones
               Container(
-                width: 200,
+                width: 300,
                 height: 150,
-                margin: EdgeInsets.only(top: 5, bottom: 200),// Tamaño del segundo botón
+                margin: EdgeInsets.only(top: 0, bottom: 290),// Tamaño del segundo botón
                 child: FloatingActionButton(
                   onPressed: () {
                     Navigator.pushNamed(context, "/");
@@ -160,22 +158,22 @@ class HomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Image.asset(
-                        'assets/images/bodas.jpeg',
-                        width: 200,
+                        'assets/images/eventos al aire libre.jpeg',
+                        width: 800,
                         height: 150,
                       ),
-                      Text(
-                        'Iniciar sesión',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'Open Sans',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
-                      ),
+                      // Text(
+                      //   'Iniciar sesión',
+                      //   style: TextStyle(
+                      //     color: Colors.white,
+                      //     fontFamily: 'Open Sans',
+                      //     fontWeight: FontWeight.bold,
+                      //     fontSize: 20,
+                      //   ),
+                      // ),
                     ],
                   ),
-                  backgroundColor: Colors.black,
+                  backgroundColor: Colors.white,
                 ),
               ),
             ],
