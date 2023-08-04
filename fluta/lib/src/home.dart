@@ -109,7 +109,7 @@ class HomePage extends StatelessWidget {
             GestureDetector(
               onTap: () {
                 // Navega a la segunda página cuando se presione la primera imagen
-                Navigator.pushNamed(context, "/register");
+                Navigator.pushNamed(context, "/bodas");
               },
               child: Stack(
                 alignment: Alignment.center,
@@ -140,7 +140,7 @@ class HomePage extends StatelessWidget {
             GestureDetector(
               onTap: () {
                 // Navega a la tercera página cuando se presione la segunda imagen
-                Navigator.pushNamed(context, "/register");
+                Navigator.pushNamed(context, "/airelibre");
               },
               child: Stack(
                 alignment: Alignment.center,
@@ -171,7 +171,7 @@ class HomePage extends StatelessWidget {
             GestureDetector(
               onTap: () {
                 // Navega a la tercera página cuando se presione la tercera imagen
-                Navigator.pushNamed(context, "/register");
+                Navigator.pushNamed(context, "/otros");
               },
               child: Stack(
                 alignment: Alignment.center,
