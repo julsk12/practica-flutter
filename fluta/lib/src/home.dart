@@ -179,7 +179,7 @@ class HomePage extends StatelessWidget {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(15),
                     child: Image.asset(
-                      'assets/images/otros.jpeg', // Ruta y nombre de la tercera imagen
+                      'assets/images/otros.jpg', // Ruta y nombre de la tercera imagen
                       width: 330,
                       height: 170,
                       fit: BoxFit.cover,

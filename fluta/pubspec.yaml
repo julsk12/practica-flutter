@@ -66,7 +66,30 @@ flutter:
     - assets/images/flecha-izquierda.png
     - assets/images/bodas.jpeg
     - assets/images/eventos al aire libre.jpeg
-    - assets/images/otros.jpeg
+    - assets/images/otros.jpg
+    - assets/images/boda1.png
+    - assets/images/boda2.jpeg
+    - assets/images/boda3.jpeg
+    - assets/images/boda4.jpeg
+    - assets/images/boda5.jpeg
+    - assets/images/boda6.jpeg
+    - assets/images/boda7.jpeg
+    - assets/images/aire1.jpeg
+    - assets/images/aire2.jpeg
+    - assets/images/aire3.jpeg
+    - assets/images/aire4.jpeg
+    - assets/images/aire5.jpeg
+    - assets/images/aire6.jpeg
+    - assets/images/aire7.jpeg
+    - assets/images/otros1.jpeg
+    - assets/images/otros2.jpeg
+    - assets/images/otros3.jpeg
+    - assets/images/otros4.jpeg
+    - assets/images/otros5.jpeg
+    - assets/images/otros6.jpeg
+    - assets/images/otros7.jpeg
+    - assets/images/otros8.jpeg
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
