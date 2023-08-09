@@ -437,7 +437,10 @@ class ProductDetailPage extends StatelessWidget {
                     width: 400,
                     height: 50,
                     child: FloatingActionButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Provider.of<CartProvider>(context, listen: false)
+                            .addToCart(details);
+                      },
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
                       ),
