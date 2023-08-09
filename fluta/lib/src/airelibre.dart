@@ -20,57 +20,57 @@ class CateAire extends StatelessWidget {
     Sillas(
         'Producto 3', 'Descripción del producto 3', 'assets/images/aire7.jpeg'),
   ];
-  final List<Detalles> Details = [
-    Detalles(
+  final List<Detalles2> Details2 = [
+    Detalles2(
         'Producto 1',
         'Descripción del producto 1',
         'assets/images/aire1.jpeg',
         'Cantidad disponible: 1 (500 unidades)',
         'XR',
         'Metal'),
-    Detalles(
+    Detalles2(
         'Producto 2',
         'Descripción del producto 2',
         'assets/images/aire2.jpeg',
         'Cantidad disponible: 1 (200 unidades)',
         'MBX3',
         'Madera de bambú'),
-    Detalles(
+    Detalles2(
         'Producto 3',
         'Descripción del producto 3',
         'assets/images/aire3.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
         'MDR',
         'Madera de roble'),
-    Detalles(
+    Detalles2(
         'Producto 1',
         'Descripción del producto 1',
         'assets/images/aire4.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
         'MDR',
         'Metal con diseño amaderado'),
-    Detalles(
+    Detalles2(
         'Producto 2',
         'Descripción del producto 2',
         'assets/images/aire5.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
         'MDR',
         'Metal negro'),
-    Detalles(
+    Detalles2(
         'Producto 3',
         'Descripción del producto 3',
         'assets/images/aire6.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
         'MDR',
         'Madera caoba'),
-    Detalles(
+    Detalles2(
         'Producto 2',
         'Descripción del producto 2',
         'assets/images/eventos al aire libre.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
         'MDR',
         'Madera de roble blanco'),
-    Detalles(
+    Detalles2(
         'Producto 3',
         'Descripción del producto 3',
         'assets/images/aire7.jpeg',
@@ -191,7 +191,7 @@ class CateAire extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      ProductDetailPage(Details: Details[index]),
+                      ProductDetailPage(Details: Details2[index]),
                 ),
               );
             },
@@ -250,7 +250,7 @@ class Sillas {
   Sillas(this.name, this.description, this.imageUrl);
 }
 
-class Detalles {
+class Detalles2 {
   final String name;
   final String description;
   final String imageUrl;
@@ -258,12 +258,12 @@ class Detalles {
   final String modelo;
   final String material;
 
-  Detalles(this.name, this.description, this.imageUrl, this.unidadProducto,
+  Detalles2(this.name, this.description, this.imageUrl, this.unidadProducto,
       this.modelo, this.material);
 }
 
 class ProductDetailPage extends StatelessWidget {
-  final Detalles Details;
+  final Detalles2 Details;
 
   ProductDetailPage({required this.Details});
 

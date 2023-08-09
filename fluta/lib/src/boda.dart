@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:algo/src/CtrlCart.dart';
 
 class CateBodas extends StatelessWidget {
   final String userName = 'John Doe';
@@ -20,58 +22,66 @@ class CateBodas extends StatelessWidget {
     Sillas(
         'Producto 3', 'Descripción del producto 3', 'assets/images/boda7.jpeg'),
   ];
-  final List<Detalles> Details = [
-    Detalles(
+  final List<Detalles1> Details = [
+    Detalles1(
         'Producto 1',
+        '9.999',
         'Descripción del producto 1',
         'assets/images/bodas.jpeg',
         'Cantidad disponible: 1 (500 unidades)',
         'XR',
         'Metal'),
-    Detalles(
+    Detalles1(
         'Producto 2',
+        '9.999',
         'Descripción del producto 2',
         'assets/images/boda1.png',
         'Cantidad disponible: 1 (200 unidades)',
         'MBX3',
         'Madera de bambú'),
-    Detalles(
+    Detalles1(
         'Producto 3',
+        '9.999',
         'Descripción del producto 3',
         'assets/images/boda2.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
         'MDR',
         'Madera de roble'),
-    Detalles(
+    Detalles1(
         'Producto 1',
+        '9.999',
         'Descripción del producto 1',
         'assets/images/boda3.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
         'MDR',
         'Metal con diseño amaderado'),
-    Detalles(
+    Detalles1(
         'Producto 2',
+        '9.999',
         'Descripción del producto 2',
         'assets/images/boda4.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
         'MDR',
         'Metal negro'),
-    Detalles(
+    Detalles1(
         'Producto 3',
+        '9.999',
         'Descripción del producto 3',
         'assets/images/boda5.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
         'MDR',
         'Madera caoba'),
-    Detalles(
+    Detalles1(
         'Producto 2',
+        '9.999',
         'Descripción del producto 2',
         'assets/images/boda6.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
         'MDR',
         'Madera de roble blanco'),
-    Detalles(
+    Detalles1(
         'Producto 3',
+        '9.999',
         'Descripción del producto 3',
         'assets/images/boda7.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
@@ -191,7 +201,7 @@ class CateBodas extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      ProductDetailPage(Details: Details[index]),
+                      ProductDetailPage(Detailss: Details[index]),
                 ),
               );
             },
@@ -250,22 +260,23 @@ class Sillas {
   Sillas(this.name, this.description, this.imageUrl);
 }
 
-class Detalles {
+class Detalles1 {
   final String name;
+  final String precio;
   final String description;
   final String imageUrl;
   final String unidadProducto;
   final String modelo;
   final String material;
 
-  Detalles(this.name, this.description, this.imageUrl, this.unidadProducto,
+  Detalles1(this.name, this.precio,  this.description, this.imageUrl, this.unidadProducto,
       this.modelo, this.material);
 }
 
 class ProductDetailPage extends StatelessWidget {
-  final Detalles Details;
+  final Detalles1 Detailss;
 
-  ProductDetailPage({required this.Details});
+  ProductDetailPage({required this.Detailss});
 
   @override
   Widget build(BuildContext context) {
@@ -285,10 +296,10 @@ class ProductDetailPage extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Image.asset(Details.imageUrl),
+                        Image.asset(Detailss.imageUrl),
                         SizedBox(height: 8),
                         Text(
-                          Details.name,
+                          Detailss.name,
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -296,7 +307,7 @@ class ProductDetailPage extends StatelessWidget {
                         ),
                         SizedBox(height: 4),
                         Text(
-                          Details.description,
+                          Detailss.description,
                           style: TextStyle(fontSize: 16),
                         ),
                         // Otros detalles del producto...
@@ -396,14 +407,14 @@ class ProductDetailPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Image.asset(Details.imageUrl),
+            Image.asset(Detailss.imageUrl),
             Padding(
               padding: EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    Details.name,
+                    Detailss.name,
                     style: TextStyle(
                       fontSize: 20,
                       fontFamily: 'Open Sans',
@@ -412,7 +423,7 @@ class ProductDetailPage extends StatelessWidget {
                   ),
                   SizedBox(height: 8),
                   Text(
-                    Details.description,
+                    Detailss.description,
                     style: TextStyle(fontSize: 16),
                   ),
                   Column(
@@ -421,7 +432,7 @@ class ProductDetailPage extends StatelessWidget {
                         width: 400,
                         height: 50,
                         child: Text(
-                          Details.unidadProducto,
+                          Detailss.unidadProducto,
                           style: TextStyle(fontSize: 16),
                         ),
                         decoration: BoxDecoration(
@@ -438,8 +449,6 @@ class ProductDetailPage extends StatelessWidget {
                     height: 50,
                     child: FloatingActionButton(
                       onPressed: () {
-                        Provider.of<CartProvider>(context, listen: false)
-                            .addToCart(details);
                       },
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
@@ -461,7 +470,11 @@ class ProductDetailPage extends StatelessWidget {
                     width: 400,
                     height: 50,
                     child: FloatingActionButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Product product = Product(name: Detailss.name, precio: Detailss.precio,
+                            description: Detailss.description, imageUrl: Detailss.imageUrl);
+                        Provider.of<CartProvider>(context, listen: false).addToCart(product);
+                      },
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
                       ),
@@ -486,12 +499,12 @@ class ProductDetailPage extends StatelessWidget {
                         fontFamily: 'Open Sans'),
                   ),
                   Text(
-                    Details.modelo,
+                    Detailss.modelo,
                     style: TextStyle(fontSize: 16, fontFamily: 'Open Sans'),
                   ),
                   SizedBox(height: 8),
                   Text(
-                    Details.material,
+                    Detailss.material,
                     style: TextStyle(fontSize: 16, fontFamily: 'Open Sans'),
                   ),
                   SizedBox(height: 8),

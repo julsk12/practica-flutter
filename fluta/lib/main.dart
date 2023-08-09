@@ -1,3 +1,4 @@
+import 'package:algo/src/CtrlCart.dart';
 import 'package:algo/src/airelibre.dart';
 import 'package:algo/src/boda.dart';
 import 'package:algo/src/home.dart';
@@ -6,6 +7,8 @@ import 'package:algo/src/loginpage.dart';
 import 'package:algo/src/otros.dart';
 import 'package:algo/src/register.dart';
 import 'package:flutter/material.dart';
+import 'package:algo/src/carrito.dart';
+import 'package:provider/provider.dart';
 
 
 void main() {
@@ -17,7 +20,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return ChangeNotifierProvider(create: (context) => CartProvider(),
+    child: MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -34,8 +38,10 @@ class MyApp extends StatelessWidget {
         "/bodas": (context) => CateBodas(),
         "/airelibre": (context) => CateAire(),
         "/otros": (context) => CateOtros(),
+        "/carrito": (context) => Carrito(),
 
       },
+    ),
     );
   }
 }
