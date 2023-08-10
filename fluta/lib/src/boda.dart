@@ -181,7 +181,7 @@ class CateBodas extends StatelessWidget {
               title: Text('Mi cuenta'),
               onTap: () {
                 // Navegar a la página de mi cuenta
-                Navigator.pop(context);
+                Navigator.pushNamed(context, "/micuenta");
               },
             ),
           ],
@@ -398,7 +398,7 @@ class ProductDetailPage extends StatelessWidget {
               title: Text('Mi cuenta'),
               onTap: () {
                 // Navegar a la página de mi cuenta
-                Navigator.pop(context);
+                Navigator.pushNamed(context, "/micuenta");
               },
             ),
           ],

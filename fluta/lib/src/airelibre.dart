@@ -146,7 +146,7 @@ class CateAire extends StatelessWidget {
               title: Text('Carrito'),
               onTap: () {
                 // Navegar a la página de carrito
-                Navigator.pop(context);
+                Navigator.pushNamed(context, "/carrito");
               },
             ),
             ListTile(
@@ -154,7 +154,7 @@ class CateAire extends StatelessWidget {
               title: Text('Favoritos'),
               onTap: () {
                 // Navegar a la página de favoritos
-                Navigator.pop(context);
+                Navigator.pushNamed(context, "/favoritos");
               },
             ),
             ListTile(
@@ -170,7 +170,7 @@ class CateAire extends StatelessWidget {
               title: Text('Mi cuenta'),
               onTap: () {
                 // Navegar a la página de mi cuenta
-                Navigator.pop(context);
+                Navigator.pushNamed(context, "/micuenta");
               },
             ),
           ],
@@ -355,7 +355,7 @@ class ProductDetailPage extends StatelessWidget {
               title: Text('Inicio'),
               onTap: () {
                 // Navegar a la página de inicio
-                Navigator.pop(context);
+                Navigator.pushNamed(context, "/homepage");
               },
             ),
             ListTile(
@@ -363,7 +363,7 @@ class ProductDetailPage extends StatelessWidget {
               title: Text('Carrito'),
               onTap: () {
                 // Navegar a la página de carrito
-                Navigator.pushNamed(context, "/homePage");
+                Navigator.pushNamed(context, "/carrito");
               },
             ),
             ListTile(
@@ -371,7 +371,7 @@ class ProductDetailPage extends StatelessWidget {
               title: Text('Favoritos'),
               onTap: () {
                 // Navegar a la página de favoritos
-                Navigator.pop(context);
+                Navigator.pushNamed(context, "/favoritos");
               },
             ),
             ListTile(
@@ -387,7 +387,7 @@ class ProductDetailPage extends StatelessWidget {
               title: Text('Mi cuenta'),
               onTap: () {
                 // Navegar a la página de mi cuenta
-                Navigator.pop(context);
+                Navigator.pushNamed(context, "/micuenta");
               },
             ),
           ],
