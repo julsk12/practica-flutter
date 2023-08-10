@@ -80,7 +80,7 @@ class HomePage extends StatelessWidget {
               title: Text('Favoritos'),
               onTap: () {
                 // Navegar a la página de favoritos
-                Navigator.pop(context);
+                Navigator.pushNamed(context, "/favoritos");
               },
             ),
             ListTile(
@@ -96,7 +96,7 @@ class HomePage extends StatelessWidget {
               title: Text('Mi cuenta'),
               onTap: () {
                 // Navegar a la página de mi cuenta
-                Navigator.pop(context);
+                Navigator.pushNamed(context, "/micuenta");
               },
             ),
           ],

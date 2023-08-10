@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:algo/src/CtrlFavoritos.dart';
 
-class favoritos extends StatelessWidget {
+class MiCuentaPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final favProvider = Provider.of<FavProvider>(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text('Favoritos'),
+        title: Text('Mi cuenta'),
         actions: [
           IconButton(
-            icon: Icon(Icons.favorite),
+            icon: Icon(Icons.search),
             onPressed: () {
               showDialog(
                 context: context,
@@ -122,31 +119,58 @@ class favoritos extends StatelessWidget {
           ],
         ),
       ),
-      body: Container(
+      body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Expanded(
-              child: ListView.builder(
-                itemCount: favProvider.items.length,
-                itemBuilder: (context, index) {
-                  final favItem = favProvider.items[index];
-                  return ListTile(
-                    leading: Image.asset(favItem.favoritos.imageUrl),
-                    title: Text(favItem.favoritos.name),
-                    subtitle: Text(favItem.favoritos.description),
-                    trailing: IconButton(
-                      icon: Icon(Icons.delete),
-                      onPressed: () {
-                        favProvider.removeFav(favItem.favoritos);
-                      },
-                    ),
-                  );
-                },
-              ),
+            CircleAvatar(
+              radius: 60,
+              backgroundImage: AssetImage('ruta_de_la_imagen.png'), // Logo del usuario
             ),
-
+            SizedBox(height: 16.0),
+            Text(
+              'Nombre del Usuario',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 16.0),
+            Text(
+              'Datos Básicos',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 8.0),
+            ListTile(
+              leading: Icon(Icons.location_on),
+              title: Text('Ubicación'),
+              subtitle: Text('Nombre de la ubicación'),
+            ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text('Sexo'),
+              subtitle: Text('Masculino/Femenino'),
+            ),
+            ListTile(
+              leading: Icon(Icons.credit_card),
+              title: Text('Identificación'),
+              subtitle: Text('Número de identificación'),
+            ),
+            Divider(),
+            SizedBox(height: 16.0),
+            Text(
+              'Información de Contacto',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 8.0),
+            ListTile(
+              leading: Icon(Icons.email),
+              title: Text('Correo'),
+              subtitle: Text('correo@example.com'),
+            ),
+            ListTile(
+              leading: Icon(Icons.phone),
+              title: Text('Celular'),
+              subtitle: Text('123-456-7890'),
+            ),
           ],
         ),
       ),

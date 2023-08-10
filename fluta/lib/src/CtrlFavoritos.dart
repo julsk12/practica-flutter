@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class Product {
+class Favoritos {
   final String name;
   final double precio;
   final String description;
   final String imageUrl;
 
-  Product({
+  Favoritos({
     required this.name,
     required this.precio,
     required this.description,
@@ -15,10 +15,10 @@ class Product {
 }
 
 class FavItem {
-  final Product products;
+  final Favoritos favoritos;
   int quantity;
 
-  FavItem({required this.products, required this.quantity});
+  FavItem({required this.favoritos, required this.quantity});
 }
 
 class FavProvider extends ChangeNotifier {
@@ -26,12 +26,12 @@ class FavProvider extends ChangeNotifier {
 
   List<FavItem> get items => _items;
 
-  void addToFav(Product products) {
+  void addToFav(Favoritos favoritos) {
     final existingFavItem = _items.firstWhere(
-        (item) => item.products.name == products.name,
-        orElse: () => FavItem(products: products, quantity: 0));
+            (item) => item.favoritos.name == favoritos.name,
+        orElse: () => FavItem(favoritos: favoritos, quantity: 0));
     if (existingFavItem.quantity == 0) {
-      _items.add(FavItem(products: products, quantity: 1));
+      _items.add(FavItem(favoritos: favoritos, quantity: 1));
     } else {
       existingFavItem.quantity++;
     }
@@ -39,8 +39,8 @@ class FavProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void removeFav(Product product) {
-    _items.removeWhere((item) => item.products.name == product.name);
+  void removeFav(Favoritos favoritos) {
+    _items.removeWhere((item) => item.favoritos.name == favoritos.name);
     notifyListeners();
   }
 }

@@ -1,9 +1,12 @@
 import 'package:algo/src/CtrlCart.dart';
+import 'package:algo/src/CtrlFavoritos.dart';
 import 'package:algo/src/airelibre.dart';
 import 'package:algo/src/boda.dart';
+import 'package:algo/src/favoritos.dart';
 import 'package:algo/src/home.dart';
 import 'package:algo/src/login.dart';
 import 'package:algo/src/loginpage.dart';
+import 'package:algo/src/micuenta.dart';
 import 'package:algo/src/otros.dart';
 import 'package:algo/src/register.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +23,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(create: (context) => CartProvider(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => CartProvider()),
+        ChangeNotifierProvider(create: (context) => FavProvider()),
+      ],
     child: MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
@@ -39,6 +46,8 @@ class MyApp extends StatelessWidget {
         "/airelibre": (context) => CateAire(),
         "/otros": (context) => CateOtros(),
         "/carrito": (context) => Carrito(),
+        "/favoritos": (context) => favoritos(),
+        "/micuenta": (context) => MiCuentaPage(),
 
       },
     ),

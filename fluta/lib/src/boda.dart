@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:algo/src/CtrlCart.dart';
+import 'package:algo/src/CtrlFavoritos.dart';
 
 class CateBodas extends StatelessWidget {
   final String userName = 'John Doe';
@@ -164,7 +165,7 @@ class CateBodas extends StatelessWidget {
               title: Text('Favoritos'),
               onTap: () {
                 // Navegar a la página de favoritos
-                Navigator.pop(context);
+                Navigator.pushNamed(context, "/favoritos");
               },
             ),
             ListTile(
@@ -188,15 +189,14 @@ class CateBodas extends StatelessWidget {
       ),
       body: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, // Número de columnas en la cuadrícula
-          crossAxisSpacing: 10.0, // Espacio entre las columnas
-          mainAxisSpacing: 10.0, // Espacio entre las filas
+          crossAxisCount: 2,
+          crossAxisSpacing: 10.0,
+          mainAxisSpacing: 10.0,
         ),
         itemCount: products.length,
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              // Navegar a la página de detalles del producto cuando se hace clic
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -351,7 +351,7 @@ class ProductDetailPage extends StatelessWidget {
                   ),
                   SizedBox(height: 8),
                   Text(
-                    'John Doe', // Nombre de usuario
+                    'John Doe',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
@@ -382,7 +382,7 @@ class ProductDetailPage extends StatelessWidget {
               title: Text('Favoritos'),
               onTap: () {
                 // Navegar a la página de favoritos
-                Navigator.pop(context);
+                Navigator.pushNamed(context, "/favoritos");
               },
             ),
             ListTile(
@@ -413,13 +413,27 @@ class ProductDetailPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    Detailss.name,
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontFamily: 'Open Sans',
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Row(
+                    children: [
+                      Text(
+                        Detailss.name,
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontFamily: 'Open Sans',
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(width: 200),
+                      IconButton(
+                        icon: Icon(Icons.favorite),
+                        onPressed: () {
+                          double price = double.parse(Detailss.precio);
+                          Favoritos favProduct = Favoritos(name: Detailss.name, precio: price,
+                              description: Detailss.description, imageUrl: Detailss.imageUrl);
+                          Provider.of<FavProvider>(context, listen: false).addToFav(favProduct);
+                        },
+                      ),
+                    ],
                   ),
                   SizedBox(height: 8),
                   Text(
