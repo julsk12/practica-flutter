@@ -64,7 +64,7 @@ class HomePage extends StatelessWidget {
               title: Text('Inicio'),
               onTap: () {
                 // Navegar a la página de inicio
-                Navigator.pop(context);
+                Navigator.pushNamed(context, "/homePage");
               },
             ),
             ListTile(
@@ -72,7 +72,7 @@ class HomePage extends StatelessWidget {
               title: Text('Carrito'),
               onTap: () {
                 // Navegar a la página de carrito
-                Navigator.pop(context);
+                Navigator.pushNamed(context, "/carrito");
               },
             ),
             ListTile(

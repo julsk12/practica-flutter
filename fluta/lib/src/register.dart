@@ -17,7 +17,7 @@ class _MyRegisterState extends State<MyRegister> {
         children: <Widget>[
           Container(
             padding: EdgeInsets.symmetric(horizontal: 0),
-            margin: EdgeInsets.only(top: 20, bottom: 0, right: 340, left: 0),
+            margin: EdgeInsets.only(top: 20, bottom: 0, right: 300, left: 0),
             child: FloatingActionButton(
               onPressed: () {
                 Navigator.pop(context, "/");
@@ -62,7 +62,7 @@ class _MyRegisterState extends State<MyRegister> {
               ),
               SizedBox(
                 width: 160.0,
-                height: 15.0,
+                height: 0.0,
                 child: Divider(
                   color: Colors.white,
                 ),
@@ -214,20 +214,22 @@ class _MyRegisterState extends State<MyRegister> {
               ),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 0),
-                margin: EdgeInsets.only(top: 0, bottom: 30),
-                child: Text(
-                  '¿Ya tienes una cuenta? Inicia sesión',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 16.5,
-                    fontFamily: 'Open Sans',
-                    fontWeight: FontWeight.w500,
+                margin: EdgeInsets.only(top: 0, bottom: 20),
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/loginPage");
+                  },
+                  child: Text(
+                    'Ya tienes una cuenta? Inicia sesion',
+                    style: TextStyle(
+                      color: Colors.black,
+                      decoration: TextDecoration.underline,
+                      fontSize: 16,
+                      fontFamily: 'Open Sans',
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
-              ),
-              Divider(
-                height: 0.0,
-                color: Colors.white,
               ),
               Column(
                 children: [

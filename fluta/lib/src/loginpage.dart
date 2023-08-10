@@ -1,5 +1,4 @@
-import 'package:algo/src/login.dart';
-import 'package:algo/src/register.dart';
+
 import 'package:flutter/material.dart';
 
 class LoginLogin extends StatefulWidget {
@@ -22,7 +21,7 @@ class _LoginLoginState extends State<LoginLogin> {
             children: [
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 0),
-                margin: EdgeInsets.only(top: 20, bottom: 0, right: 340, left: 0),
+                margin: EdgeInsets.only(top: 10, bottom: 0, right: 300, left: 0),
                 child: FloatingActionButton(
                   onPressed: () {
                     Navigator.pop(context, "/");
@@ -130,14 +129,20 @@ class _LoginLoginState extends State<LoginLogin> {
               ),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 0),
-                margin: EdgeInsets.only(top: 0, bottom: 30),
-                child: Text(
-                  '¿No tienes cuenta? Registrate',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 16.5,
-                    fontFamily: 'Open Sans',
-                    fontWeight: FontWeight.w500,
+                margin: EdgeInsets.only(top: 0, bottom: 0),
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/register");
+                  },
+                  child: Text(
+                    '¿No tienes cuenta? Registrate',
+                    style: TextStyle(
+                      color: Colors.black,
+                      decoration: TextDecoration.underline,
+                      fontSize: 16,
+                      fontFamily: 'Open Sans',
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
               ),

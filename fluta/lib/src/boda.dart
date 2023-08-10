@@ -148,7 +148,7 @@ class CateBodas extends StatelessWidget {
               title: Text('Inicio'),
               onTap: () {
                 // Navegar a la página de inicio
-                Navigator.pop(context, "/");
+                Navigator.pushNamed(context, "/homePage");
               },
             ),
             ListTile(
@@ -366,7 +366,7 @@ class ProductDetailPage extends StatelessWidget {
               title: Text('Inicio'),
               onTap: () {
                 // Navegar a la página de inicio
-                Navigator.pop(context);
+                Navigator.pushNamed(context, "/homePage");
               },
             ),
             ListTile(
@@ -471,7 +471,8 @@ class ProductDetailPage extends StatelessWidget {
                     height: 50,
                     child: FloatingActionButton(
                       onPressed: () {
-                        Product product = Product(name: Detailss.name, precio: Detailss.precio,
+                        double price = double.parse(Detailss.precio);
+                        Product product = Product(name: Detailss.name, precio: price,
                             description: Detailss.description, imageUrl: Detailss.imageUrl);
                         Provider.of<CartProvider>(context, listen: false).addToCart(product);
                       },
