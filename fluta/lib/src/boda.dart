@@ -7,83 +7,95 @@ class CateBodas extends StatelessWidget {
   final String userName = 'John Doe';
   final List<Sillas> products = [
     Sillas(
-        'Producto 1', 'Descripción del producto 1', 'assets/images/bodas.jpeg'),
-    Sillas(
-        'Producto 2', 'Descripción del producto 2', 'assets/images/boda1.png'),
-    Sillas(
-        'Producto 3', 'Descripción del producto 3', 'assets/images/boda2.jpeg'),
-    Sillas(
-        'Producto 1', 'Descripción del producto 1', 'assets/images/boda3.jpeg'),
-    Sillas(
-        'Producto 2', 'Descripción del producto 2', 'assets/images/boda4.jpeg'),
-    Sillas(
-        'Producto 3', 'Descripción del producto 3', 'assets/images/boda5.jpeg'),
-    Sillas(
-        'Producto 2', 'Descripción del producto 2', 'assets/images/boda6.jpeg'),
-    Sillas(
-        'Producto 3', 'Descripción del producto 3', 'assets/images/boda7.jpeg'),
+        'Sillas con adorno de tela y flor blanca',
+        '50.000x40',
+        'silla de metal adornada con tela '
+            'palo de rosa y flor blanca adornando el moño',
+        'assets/images/bodas.jpeg'),
+    Sillas('Sillas "forever" "always"', '50.000x40', '',
+        'assets/images/boda1.png'),
+    Sillas('Sillas de madera "Mr" y "Mrs"', '50.000x40',
+        'Descripción del producto 3', 'assets/images/boda2.jpeg'),
+    Sillas('Sillas con adorno de tela rosa pastel', '50.000x40',
+        'Descripción del producto 1', 'assets/images/boda3.jpeg'),
+    Sillas('Sillas de madera negra con adorno de tela blanco', '50.000x40',
+        'Descripción del producto 2', 'assets/images/boda4.jpeg'),
+    Sillas('Sillas con adorno natural, hojas y flores blancas', '50.000x40',
+        'Descripción del producto 3', 'assets/images/boda5.jpeg'),
+    Sillas('Sillas de bambú blanco con girnalda de flores', '50.000x40',
+        'Descripción del producto 2', 'assets/images/boda6.jpeg'),
+    Sillas('Sillas de madera blanca', '50.000x40', 'Descripción del producto 3',
+        'assets/images/boda7.jpeg'),
   ];
   final List<Detalles1> Details = [
     Detalles1(
-        'Producto 1',
-        '9.999',
-        'Descripción del producto 1',
+        'Sillas con adorno de tela y flor blanca',
+        '50.000',
+        'silla de metal adornada con tela '
+            'palo de rosa y flor blanca adornando el moño',
         'assets/images/bodas.jpeg',
         'Cantidad disponible: 1 (500 unidades)',
         'XR',
         'Metal'),
     Detalles1(
-        'Producto 2',
-        '9.999',
-        'Descripción del producto 2',
+        'Sillas "forever" "always"',
+        '50.000',
+        'Sillas con estampado en el espaldar de "forever" "always"'
+            'con guirnalda de flores en la cabecera',
         'assets/images/boda1.png',
         'Cantidad disponible: 1 (200 unidades)',
         'MBX3',
-        'Madera de bambú'),
+        'Madera de bambú blanco'),
     Detalles1(
-        'Producto 3',
-        '9.999',
-        'Descripción del producto 3',
+        'Sillas de madera "Mr" y "Mrs"',
+        '50.000',
+        'Sillas de madera de roble con colgante '
+            'de iniciales de "Mr" y "Mrs" dorada, con colgantes de flores',
         'assets/images/boda2.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
         'MDR',
         'Madera de roble'),
     Detalles1(
-        'Producto 1',
-        '9.999',
-        'Descripción del producto 1',
+        'Sillas con adorno de tela rosa pastel',
+        '50.000',
+        'Sillas con hermosa decoración de tela cruzada de color '
+            'rosa pastel, sillas doradas, con un moño a mitad'
+            'de la tela',
         'assets/images/boda3.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
         'MDR',
         'Metal con diseño amaderado'),
     Detalles1(
-        'Producto 2',
-        '9.999',
-        'Descripción del producto 2',
+        'Sillas con adorno de tela blanco',
+        '50.000',
+        'Sillas de metal con adorno de tela blanco'
+            'semitransparente con decoracion de rosas naranja y blanca',
         'assets/images/boda4.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
         'MDR',
         'Metal negro'),
     Detalles1(
-        'Producto 3',
-        '9.999',
-        'Descripción del producto 3',
+        'Sillas con adorno natural',
+        '50.000',
+        'Sillas con adornos de hojas y rosas blancas, '
+            'con listones blancos, silla de madera café',
         'assets/images/boda5.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
         'MDR',
         'Madera caoba'),
     Detalles1(
-        'Producto 2',
-        '9.999',
-        'Descripción del producto 2',
+        'Sillas de bambú con girnalda de flores',
+        '50.000',
+        'Sillas de bambú blanco con girnalda de rosas rosadas'
+            ' y hojas',
         'assets/images/boda6.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
         'MDR',
         'Madera de roble blanco'),
     Detalles1(
-        'Producto 3',
-        '9.999',
-        'Descripción del producto 3',
+        'Sillas de madera blanca',
+        '50.000',
+        'Sillas de madera cuadrada blanco',
         'assets/images/boda7.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
         'MDR',
@@ -173,7 +185,7 @@ class CateBodas extends StatelessWidget {
               title: Text('Notificaciones'),
               onTap: () {
                 // Navegar a la página de notificaciones
-                Navigator.pop(context);
+                Navigator.pushNamed(context, "/notificaciones");
               },
             ),
             ListTile(
@@ -233,7 +245,7 @@ class CateBodas extends StatelessWidget {
                         ),
                         SizedBox(height: 4),
                         Text(
-                          products[index].description,
+                          products[index].precio,
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 14,
@@ -254,10 +266,11 @@ class CateBodas extends StatelessWidget {
 
 class Sillas {
   final String name;
+  final String precio;
   final String description;
   final String imageUrl;
 
-  Sillas(this.name, this.description, this.imageUrl);
+  Sillas(this.name, this.precio, this.description, this.imageUrl);
 }
 
 class Detalles1 {
@@ -269,8 +282,8 @@ class Detalles1 {
   final String modelo;
   final String material;
 
-  Detalles1(this.name, this.precio,  this.description, this.imageUrl, this.unidadProducto,
-      this.modelo, this.material);
+  Detalles1(this.name, this.precio, this.description, this.imageUrl,
+      this.unidadProducto, this.modelo, this.material);
 }
 
 class ProductDetailPage extends StatelessWidget {
@@ -286,46 +299,8 @@ class ProductDetailPage extends StatelessWidget {
         title: Text('Detalles del Producto'),
         actions: [
           IconButton(
-            icon: Icon(Icons.shopping_cart),
-            onPressed: () {
-              showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    content: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Image.asset(Detailss.imageUrl),
-                        SizedBox(height: 8),
-                        Text(
-                          Detailss.name,
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(height: 4),
-                        Text(
-                          Detailss.description,
-                          style: TextStyle(fontSize: 16),
-                        ),
-                        // Otros detalles del producto...
-                      ],
-                    ),
-                    actions: [
-                      TextButton(
-                        onPressed: () {
-                          // Cerrar el popup
-                          Navigator.pop(context);
-                        },
-                        child: Text('Cerrar'),
-                      ),
-                    ],
-                  );
-                },
-              );
-            },
+            icon: Icon(Icons.search),
+            onPressed: () {},
           ),
         ],
       ),
@@ -390,7 +365,7 @@ class ProductDetailPage extends StatelessWidget {
               title: Text('Notificaciones'),
               onTap: () {
                 // Navegar a la página de notificaciones
-                Navigator.pop(context);
+                Navigator.pushNamed(context, "/notificaciones");
               },
             ),
             ListTile(
@@ -418,19 +393,56 @@ class ProductDetailPage extends StatelessWidget {
                       Text(
                         Detailss.name,
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 15,
                           fontFamily: 'Open Sans',
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(width: 200),
+                      SizedBox(width: 20),
                       IconButton(
                         icon: Icon(Icons.favorite),
                         onPressed: () {
                           double price = double.parse(Detailss.precio);
-                          Favoritos favProduct = Favoritos(name: Detailss.name, precio: price,
-                              description: Detailss.description, imageUrl: Detailss.imageUrl);
-                          Provider.of<FavProvider>(context, listen: false).addToFav(favProduct);
+                          Favoritos favProduct = Favoritos(
+                              name: Detailss.name,
+                              precio: price,
+                              description: Detailss.description,
+                              imageUrl: Detailss.imageUrl);
+                          Provider.of<FavProvider>(context, listen: false)
+                              .addToFav(favProduct);
+                          showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                content: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Se ha añadido a favoritos',
+                                      style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () {
+                                      // Cerrar el popup
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text(
+                                      'Cerrar',
+                                      style: TextStyle(color: Colors.black),
+                                    ),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
                         },
                       ),
                     ],
@@ -440,9 +452,15 @@ class ProductDetailPage extends StatelessWidget {
                     Detailss.description,
                     style: TextStyle(fontSize: 16),
                   ),
+                  SizedBox(height: 8),
+                  Text(
+                    Detailss.precio,
+                    style: TextStyle(fontSize: 16),
+                  ),
                   Column(
                     children: [
                       Container(
+                        padding: EdgeInsets.all(16.0),
                         width: 400,
                         height: 50,
                         child: Text(
@@ -463,6 +481,7 @@ class ProductDetailPage extends StatelessWidget {
                     height: 50,
                     child: FloatingActionButton(
                       onPressed: () {
+                        Navigator.pushNamed(context, "/domicilios");
                       },
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
@@ -486,9 +505,54 @@ class ProductDetailPage extends StatelessWidget {
                     child: FloatingActionButton(
                       onPressed: () {
                         double price = double.parse(Detailss.precio);
-                        Product product = Product(name: Detailss.name, precio: price,
-                            description: Detailss.description, imageUrl: Detailss.imageUrl);
-                        Provider.of<CartProvider>(context, listen: false).addToCart(product);
+                        Product product = Product(
+                            name: Detailss.name,
+                            precio: price,
+                            description: Detailss.description,
+                            imageUrl: Detailss.imageUrl);
+                        Provider.of<CartProvider>(context, listen: false)
+                            .addToCart(product);
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image.asset(Detailss.imageUrl),
+                                  SizedBox(height: 8),
+                                  Text(
+                                    Detailss.name,
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  SizedBox(height: 4),
+                                  Text(
+                                    Detailss.description,
+                                    style: TextStyle(fontSize: 16),
+                                  ),
+                                ],
+                              ),
+                              actions: [
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, "/domicilios");
+                                  },
+                                  child: Text('Alquilar ahora'),
+                                ),
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, "/carrito");
+                                  },
+                                  child: Text('Carrito'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
                       },
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),

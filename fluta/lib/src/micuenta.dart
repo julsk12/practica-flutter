@@ -105,7 +105,7 @@ class MiCuentaPage extends StatelessWidget {
               title: Text('Notificaciones'),
               onTap: () {
                 // Navegar a la página de notificaciones
-                Navigator.pop(context);
+                Navigator.pushNamed(context, "/notificaciones");
               },
             ),
             ListTile(
@@ -122,11 +122,11 @@ class MiCuentaPage extends StatelessWidget {
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CircleAvatar(
               radius: 60,
-              backgroundImage: AssetImage('ruta_de_la_imagen.png'), // Logo del usuario
+              backgroundImage: AssetImage('assets/images/logo.png'),
             ),
             SizedBox(height: 16.0),
             Text(

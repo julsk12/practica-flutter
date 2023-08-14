@@ -2,13 +2,17 @@ import 'package:algo/src/CtrlCart.dart';
 import 'package:algo/src/CtrlFavoritos.dart';
 import 'package:algo/src/airelibre.dart';
 import 'package:algo/src/boda.dart';
+import 'package:algo/src/domicilio.dart';
 import 'package:algo/src/favoritos.dart';
 import 'package:algo/src/home.dart';
 import 'package:algo/src/login.dart';
 import 'package:algo/src/loginpage.dart';
+import 'package:algo/src/metodosdepago.dart';
 import 'package:algo/src/micuenta.dart';
+import 'package:algo/src/notificaciones.dart';
 import 'package:algo/src/otros.dart';
 import 'package:algo/src/register.dart';
+import 'package:algo/src/tarjetas.dart';
 import 'package:flutter/material.dart';
 import 'package:algo/src/carrito.dart';
 import 'package:provider/provider.dart';
@@ -48,6 +52,10 @@ class MyApp extends StatelessWidget {
         "/carrito": (context) => Carrito(),
         "/favoritos": (context) => favoritos(),
         "/micuenta": (context) => MiCuentaPage(),
+        "/notificaciones": (context) => notificaciones(),
+        "/domicilios": (context) => Domicilios(),
+        "/metodos": (context) => MetodosPago(),
+        "/tarjeta": (context) => Tarjeta(),
 
       },
     ),

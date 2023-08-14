@@ -1,28 +1,32 @@
+import 'package:algo/src/CtrlFavoritos.dart';
+import 'package:algo/src/CtrlCart.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
 class CateOtros extends StatelessWidget {
   final String userName = 'John Doe';
   final List<Sillas> products = [
     Sillas(
-        'Producto 1', 'Descripción del producto 1', 'assets/images/otros1.jpeg'),
+        'Producto 1', '50.000x40', 'Descripción del producto 1', 'assets/images/otros1.jpeg'),
     Sillas(
-        'Producto 2', 'Descripción del producto 2', 'assets/images/otros2.jpeg'),
+        'Producto 2', '50.000x40', 'Descripción del producto 2', 'assets/images/otros2.jpeg'),
     Sillas(
-        'Producto 3', 'Descripción del producto 3', 'assets/images/otros3.jpeg'),
+        'Producto 3', '50.000x40', 'Descripción del producto 3', 'assets/images/otros3.jpeg'),
     Sillas(
-        'Producto 1', 'Descripción del producto 1', 'assets/images/otros4.jpeg'),
+        'Producto 1', '50.000x40', 'Descripción del producto 1', 'assets/images/otros4.jpeg'),
     Sillas(
-        'Producto 2', 'Descripción del producto 2', 'assets/images/otros5.jpeg'),
+        'Producto 2', '50.000x40', 'Descripción del producto 2', 'assets/images/otros5.jpeg'),
     Sillas(
-        'Producto 3', 'Descripción del producto 3', 'assets/images/otros6.jpeg'),
+        'Producto 3', '50.000x40', 'Descripción del producto 3', 'assets/images/otros6.jpeg'),
     Sillas(
-        'Producto 2', 'Descripción del producto 2', 'assets/images/otros7.jpeg'),
+        'Producto 2', '50.000x40', 'Descripción del producto 2', 'assets/images/otros7.jpeg'),
     Sillas(
-        'Producto 3', 'Descripción del producto 3', 'assets/images/otros8.jpeg'),
+        'Producto 3', '50.000x40', 'Descripción del producto 3', 'assets/images/otros8.jpeg'),
   ];
   final List<Detalles> Details = [
     Detalles(
         'Producto 1',
+        '50.000',
         'Descripción del producto 1',
         'assets/images/otros1.jpeg',
         'Cantidad disponible: 1 (500 unidades)',
@@ -30,6 +34,7 @@ class CateOtros extends StatelessWidget {
         'Metal'),
     Detalles(
         'Producto 2',
+        '50.000',
         'Descripción del producto 2',
         'assets/images/otros2.jpeg',
         'Cantidad disponible: 1 (200 unidades)',
@@ -37,6 +42,7 @@ class CateOtros extends StatelessWidget {
         'Madera de bambú'),
     Detalles(
         'Producto 3',
+        '50.000',
         'Descripción del producto 3',
         'assets/images/otros3.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
@@ -44,6 +50,7 @@ class CateOtros extends StatelessWidget {
         'Madera de roble'),
     Detalles(
         'Producto 1',
+        '50.000',
         'Descripción del producto 1',
         'assets/images/otros4.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
@@ -51,6 +58,7 @@ class CateOtros extends StatelessWidget {
         'Metal con diseño amaderado'),
     Detalles(
         'Producto 2',
+        '50.000',
         'Descripción del producto 2',
         'assets/images/otros5.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
@@ -58,6 +66,7 @@ class CateOtros extends StatelessWidget {
         'Metal negro'),
     Detalles(
         'Producto 3',
+        '50.000',
         'Descripción del producto 3',
         'assets/images/otros6.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
@@ -65,6 +74,7 @@ class CateOtros extends StatelessWidget {
         'Madera caoba'),
     Detalles(
         'Producto 2',
+        '50.000',
         'Descripción del producto 2',
         'assets/images/otros7.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
@@ -72,6 +82,7 @@ class CateOtros extends StatelessWidget {
         'Madera de roble blanco'),
     Detalles(
         'Producto 3',
+        '50.000',
         'Descripción del producto 3',
         'assets/images/otros8.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
@@ -162,7 +173,7 @@ class CateOtros extends StatelessWidget {
               title: Text('Notificaciones'),
               onTap: () {
                 // Navegar a la página de notificaciones
-                Navigator.pop(context);
+                Navigator.pushNamed(context, "/notificaciones");
               },
             ),
             ListTile(
@@ -223,7 +234,7 @@ class CateOtros extends StatelessWidget {
                         ),
                         SizedBox(height: 4),
                         Text(
-                          products[index].description,
+                          products[index].precio,
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 14,
@@ -244,21 +255,23 @@ class CateOtros extends StatelessWidget {
 
 class Sillas {
   final String name;
+  final String precio;
   final String description;
   final String imageUrl;
 
-  Sillas(this.name, this.description, this.imageUrl);
+  Sillas(this.name,this.precio, this.description, this.imageUrl);
 }
 
 class Detalles {
   final String name;
+  final String precio;
   final String description;
   final String imageUrl;
   final String unidadProducto;
   final String modelo;
   final String material;
 
-  Detalles(this.name, this.description, this.imageUrl, this.unidadProducto,
+  Detalles(this.name, this.precio,  this.description, this.imageUrl, this.unidadProducto,
       this.modelo, this.material);
 }
 
@@ -275,45 +288,8 @@ class ProductDetailPage extends StatelessWidget {
         title: Text('Detalles del Producto'),
         actions: [
           IconButton(
-            icon: Icon(Icons.shopping_cart),
+            icon: Icon(Icons.search),
             onPressed: () {
-              showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    content: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Image.asset(Details.imageUrl),
-                        SizedBox(height: 8),
-                        Text(
-                          Details.name,
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(height: 4),
-                        Text(
-                          Details.description,
-                          style: TextStyle(fontSize: 16),
-                        ),
-                        // Otros detalles del producto...
-                      ],
-                    ),
-                    actions: [
-                      TextButton(
-                        onPressed: () {
-                          // Cerrar el popup
-                          Navigator.pop(context);
-                        },
-                        child: Text('Cerrar'),
-                      ),
-                    ],
-                  );
-                },
-              );
             },
           ),
         ],
@@ -340,7 +316,7 @@ class ProductDetailPage extends StatelessWidget {
                   ),
                   SizedBox(height: 8),
                   Text(
-                    'John Doe', // Nombre de usuario
+                    'John Doe',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
@@ -355,7 +331,7 @@ class ProductDetailPage extends StatelessWidget {
               title: Text('Inicio'),
               onTap: () {
                 // Navegar a la página de inicio
-                Navigator.pushNamed(context, "/homepage");
+                Navigator.pushNamed(context, "/homePage");
               },
             ),
             ListTile(
@@ -379,7 +355,7 @@ class ProductDetailPage extends StatelessWidget {
               title: Text('Notificaciones'),
               onTap: () {
                 // Navegar a la página de notificaciones
-                Navigator.pop(context);
+                Navigator.pushNamed(context, "/notificaciones");
               },
             ),
             ListTile(
@@ -402,13 +378,55 @@ class ProductDetailPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    Details.name,
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontFamily: 'Open Sans',
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Row(
+                    children: [
+                      Text(
+                        Details.name,
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontFamily: 'Open Sans',
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(width: 20),
+                      IconButton(
+                        icon: Icon(Icons.favorite),
+                        onPressed: () {
+                          double price = double.parse(Details.precio);
+                          Favoritos favProduct = Favoritos(name: Details.name, precio: price,
+                              description: Details.description, imageUrl: Details.imageUrl);
+                          Provider.of<FavProvider>(context, listen: false).addToFav(favProduct);
+                          showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                content: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Se ha añadido a favoritos',
+                                      style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text('Cerrar', style: TextStyle(color: Colors.black),),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                        },
+                      ),
+                    ],
                   ),
                   SizedBox(height: 8),
                   Text(
@@ -418,6 +436,7 @@ class ProductDetailPage extends StatelessWidget {
                   Column(
                     children: [
                       Container(
+                        padding: EdgeInsets.all(16.0),
                         width: 400,
                         height: 50,
                         child: Text(
@@ -437,7 +456,9 @@ class ProductDetailPage extends StatelessWidget {
                     width: 400,
                     height: 50,
                     child: FloatingActionButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, "/domicilios");
+                      },
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
                       ),
@@ -458,7 +479,53 @@ class ProductDetailPage extends StatelessWidget {
                     width: 400,
                     height: 50,
                     child: FloatingActionButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        double price = double.parse(Details.precio);
+                        Product product = Product(name: Details.name, precio: price,
+                            description: Details.description, imageUrl: Details.imageUrl);
+                        Provider.of<CartProvider>(context, listen: false).addToCart(product);
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image.asset(Details.imageUrl),
+                                  SizedBox(height: 8),
+                                  Text(
+                                    Details.name,
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  SizedBox(height: 4),
+                                  Text(
+                                    Details.description,
+                                    style: TextStyle(fontSize: 16),
+                                  ),
+                                ],
+                              ),
+                              actions: [
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, "/domicilios");
+                                  },
+                                  child: Text('Alquilar ahora'),
+                                ),
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, "/carrito");
+                                  },
+                                  child: Text('Carrito'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      },
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
                       ),
@@ -521,4 +588,5 @@ class ProductDetailPage extends StatelessWidget {
     );
   }
 }
+
 

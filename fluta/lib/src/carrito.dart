@@ -14,35 +14,7 @@ class Carrito extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.favorite),
             onPressed: () {
-              showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    content: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Se ha añadido a favoritos',
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                    actions: [
-                      TextButton(
-                        onPressed: () {
-                          // Cerrar el popup
-                          Navigator.pop(context);
-                        },
-                        child: Text('Cerrar'),
-                      ),
-                    ],
-                  );
-                },
-              );
+              Navigator.pushNamed(context, "/favoritos");
             },
           ),
         ],
@@ -100,7 +72,7 @@ class Carrito extends StatelessWidget {
               title: Text('Favoritos'),
               onTap: () {
                 // Navegar a la página de favoritos
-                Navigator.pop(context);
+                Navigator.pushNamed(context, "/favoritos");
               },
             ),
             ListTile(

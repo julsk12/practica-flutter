@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
-class MyRegister extends StatefulWidget {
-  static String dy = 'MyRegister';
+class Domicilios extends StatefulWidget {
 
   @override
-  State<MyRegister> createState() => _MyRegisterState();
+  State<Domicilios> createState() => _DomiciliosState();
 }
 
-class _MyRegisterState extends State<MyRegister> {
+class _DomiciliosState extends State<Domicilios> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,49 +16,36 @@ class _MyRegisterState extends State<MyRegister> {
         children: <Widget>[
           Container(
             padding: EdgeInsets.symmetric(horizontal: 0),
-            margin: EdgeInsets.only(top: 20, bottom: 0, right: 300, left: 0),
-            child: FloatingActionButton(
-              onPressed: () {
-                Navigator.pop(context, "/");
-              },
-              child: Image.asset('assets/images/flecha-izquierda.png',
-                width: 30,
-                height: 30,),
-              backgroundColor: Colors.transparent,
-              elevation: 0,
+            margin: EdgeInsets.only(top: 20, bottom: 0, right: 10, left: 0),
+            child: Row(
+              children: [
+                FloatingActionButton(
+                  onPressed: () {
+                    Navigator.pop(context, "/");
+                  },
+                  child: Image.asset(
+                    'assets/images/flecha-izquierda.png',
+                    width: 30,
+                    height: 30,
+                  ),
+                  backgroundColor: Colors.transparent,
+                  elevation: 0,
+                ),
+                SizedBox(width: 10),
+                Text(
+                  'Formulario de domicilio',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
             ),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 0),
-                  margin: EdgeInsets.only(top: 10, bottom: 30),
-                  child: Text(
-                    '¡Registrate para ver más contenidos!',
-                    textAlign: TextAlign.start,
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Open Sans',
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 0),
-                margin: EdgeInsets.only(top: 0, bottom: 30),
-                child: Text(
-                  'Para crear su cuenta ingrese todos su datos',
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontFamily: 'Open Sans',
-                  ),
-                ),
-              ),
               SizedBox(
                 width: 160.0,
                 height: 0.0,
@@ -75,12 +61,12 @@ class _MyRegisterState extends State<MyRegister> {
                 enableInteractiveSelection: false,
                 autofocus: true,
                 decoration: InputDecoration(
-                    hintText: 'Nombre completo',
+                    hintText: 'Departamento',
                     hintStyle: TextStyle(
                         color: Colors.white,
                         fontFamily: 'Open sans',
                         fontWeight: FontWeight.bold),
-                    labelText: 'Nombre completo',
+                    labelText: 'Departamento',
                     filled: true,
                     fillColor: Colors.black,
                     focusColor: Colors.grey[700],
@@ -92,7 +78,7 @@ class _MyRegisterState extends State<MyRegister> {
                       borderSide: BorderSide(color: Colors.white),
                     ),
                     contentPadding:
-                        EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
+                    EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
               ),
               Divider(
                 height: 15.0,
@@ -104,10 +90,10 @@ class _MyRegisterState extends State<MyRegister> {
                     color: Colors.white),
                 enableInteractiveSelection: false,
                 decoration: InputDecoration(
-                    hintText: 'Identificación',
+                    hintText: 'Ciudad',
                     hintStyle:
-                        TextStyle(color: Colors.white, fontFamily: 'Open sans'),
-                    labelText: 'Identificación',
+                    TextStyle(color: Colors.white, fontFamily: 'Open sans'),
+                    labelText: 'Ciudad',
                     filled: true,
                     fillColor: Colors.black,
                     focusColor: Colors.grey[700],
@@ -115,7 +101,7 @@ class _MyRegisterState extends State<MyRegister> {
                       borderRadius: BorderRadius.circular(30),
                     ),
                     contentPadding:
-                        EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
+                    EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
               ),
               Divider(
                 height: 15.0,
@@ -127,10 +113,10 @@ class _MyRegisterState extends State<MyRegister> {
                     color: Colors.white),
                 enableInteractiveSelection: false,
                 decoration: InputDecoration(
-                    hintText: 'Fecha de nacimiento',
+                    hintText: 'Barrio',
                     hintStyle:
-                        TextStyle(color: Colors.white, fontFamily: 'Open sans'),
-                    labelText: 'Fecha de nacimiento',
+                    TextStyle(color: Colors.white, fontFamily: 'Open sans'),
+                    labelText: 'Barrio',
                     filled: true,
                     fillColor: Colors.black,
                     focusColor: Colors.grey[700],
@@ -138,7 +124,7 @@ class _MyRegisterState extends State<MyRegister> {
                       borderRadius: BorderRadius.circular(30),
                     ),
                     contentPadding:
-                        EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
+                    EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
               ),
               Divider(
                 height: 15.0,
@@ -150,10 +136,10 @@ class _MyRegisterState extends State<MyRegister> {
                     color: Colors.white),
                 enableInteractiveSelection: false,
                 decoration: InputDecoration(
-                    hintText: 'Celular',
+                    hintText: 'Tipo de calle',
                     hintStyle:
-                        TextStyle(color: Colors.white, fontFamily: 'Open sans'),
-                    labelText: 'Celular',
+                    TextStyle(color: Colors.white, fontFamily: 'Open sans'),
+                    labelText: 'Tipo de calle',
                     filled: true,
                     fillColor: Colors.black,
                     focusColor: Colors.grey[700],
@@ -161,7 +147,7 @@ class _MyRegisterState extends State<MyRegister> {
                       borderRadius: BorderRadius.circular(30),
                     ),
                     contentPadding:
-                        EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
+                    EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
               ),
               Divider(
                 height: 15.0,
@@ -173,10 +159,10 @@ class _MyRegisterState extends State<MyRegister> {
                     color: Colors.white),
                 enableInteractiveSelection: false,
                 decoration: InputDecoration(
-                    hintText: 'Correo electronico',
+                    hintText: 'Carrera',
                     hintStyle:
-                        TextStyle(color: Colors.white, fontFamily: 'Open sans'),
-                    labelText: 'Correo electronico',
+                    TextStyle(color: Colors.white, fontFamily: 'Open sans'),
+                    labelText: 'Carrera',
                     filled: true,
                     fillColor: Colors.black,
                     focusColor: Colors.grey[700],
@@ -184,7 +170,7 @@ class _MyRegisterState extends State<MyRegister> {
                       borderRadius: BorderRadius.circular(30),
                     ),
                     contentPadding:
-                        EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
+                    EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
               ),
               Divider(
                 height: 15.0,
@@ -197,10 +183,10 @@ class _MyRegisterState extends State<MyRegister> {
                     color: Colors.white),
                 enableInteractiveSelection: false,
                 decoration: InputDecoration(
-                    hintText: 'Contraseña',
+                    hintText: 'Numero',
                     hintStyle:
-                        TextStyle(color: Colors.white, fontFamily: 'Open sans'),
-                    labelText: 'Contraseña',
+                    TextStyle(color: Colors.white, fontFamily: 'Open sans'),
+                    labelText: 'Numero',
                     filled: true,
                     fillColor: Colors.black,
                     focusColor: Colors.grey[700],
@@ -208,29 +194,10 @@ class _MyRegisterState extends State<MyRegister> {
                       borderRadius: BorderRadius.circular(30),
                     ),
                     contentPadding:
-                        EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
+                    EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
               ),
               Divider(
                 height: 15.0,
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 0),
-                margin: EdgeInsets.only(top: 0, bottom: 20),
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, "/loginPage");
-                  },
-                  child: Text(
-                    'Ya tienes una cuenta? Inicia sesion',
-                    style: TextStyle(
-                      color: Colors.black,
-                      decoration: TextDecoration.underline,
-                      fontSize: 16,
-                      fontFamily: 'Open Sans',
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
               ),
               Column(
                 children: [
@@ -238,12 +205,14 @@ class _MyRegisterState extends State<MyRegister> {
                     width: 300,
                     height: 50,
                     child: FloatingActionButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, "/metodos");
+                      },
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                       child: Text(
-                        'Registrarse',
+                        'Siguiente',
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'Open Sans',

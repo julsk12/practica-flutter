@@ -12,37 +12,9 @@ class favoritos extends StatelessWidget {
         title: Text('Favoritos'),
         actions: [
           IconButton(
-            icon: Icon(Icons.favorite),
+            icon: Icon(Icons.search),
             onPressed: () {
-              showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    content: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Se ha añadido a favoritos',
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                    actions: [
-                      TextButton(
-                        onPressed: () {
-                          // Cerrar el popup
-                          Navigator.pop(context);
-                        },
-                        child: Text('Cerrar'),
-                      ),
-                    ],
-                  );
-                },
-              );
+              
             },
           ),
         ],
@@ -108,7 +80,7 @@ class favoritos extends StatelessWidget {
               title: Text('Notificaciones'),
               onTap: () {
                 // Navegar a la página de notificaciones
-                Navigator.pop(context);
+                Navigator.pushNamed(context, "/notificaciones");
               },
             ),
             ListTile(

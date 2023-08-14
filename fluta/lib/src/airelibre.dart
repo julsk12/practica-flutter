@@ -1,83 +1,97 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:algo/src/CtrlCart.dart';
+import 'package:algo/src/CtrlFavoritos.dart';
 
 class CateAire extends StatelessWidget {
   final String userName = 'John Doe';
   final List<Sillas> products = [
     Sillas(
-        'Producto 1', 'Descripción del producto 1', 'assets/images/aire1.jpeg'),
+        'Sillas colgantes de madera','50.000x40', 'Descripción del producto 1', 'assets/images/aire1.jpeg'),
     Sillas(
-        'Producto 2', 'Descripción del producto 2', 'assets/images/aire2.jpeg'),
+        'Hamacas relajantes','50.000x40', 'Descripción del producto 2', 'assets/images/aire2.jpeg'),
     Sillas(
-        'Producto 3', 'Descripción del producto 3', 'assets/images/aire3.jpeg'),
+        'Sillas de madera color arena','50.000x40', 'Descripción del producto 3', 'assets/images/aire3.jpeg'),
     Sillas(
-        'Producto 1', 'Descripción del producto 1', 'assets/images/aire4.jpeg'),
+        'Silla de hierro negro','50.000x40', 'Descripción del producto 1', 'assets/images/aire4.jpeg'),
     Sillas(
-        'Producto 2', 'Descripción del producto 2', 'assets/images/aire5.jpeg'),
+        'Silla de hierro con bordado','50.000x40', 'Descripción del producto 2', 'assets/images/aire5.jpeg'),
     Sillas(
-        'Producto 3', 'Descripción del producto 3', 'assets/images/aire6.jpeg'),
+        'Sillas estilo hamaca comodas','50.000x40', 'Descripción del producto 3', 'assets/images/aire6.jpeg'),
     Sillas(
-        'Producto 2', 'Descripción del producto 2', 'assets/images/eventos al aire libre.jpeg'),
+        'Sillas de madera blanca','50.000x40', 'Descripción del producto 2', 'assets/images/eventos al aire libre.jpeg'),
     Sillas(
-        'Producto 3', 'Descripción del producto 3', 'assets/images/aire7.jpeg'),
+        'Sillas de metal para jardin','50.000x40', 'Descripción del producto 3', 'assets/images/aire7.jpeg'),
   ];
-  final List<Detalles2> Details2 = [
+
+  final List<Detalles2> Details = [
     Detalles2(
-        'Producto 1',
-        'Descripción del producto 1',
+        'Sillas colgantes de madera',
+        '50.000',
+        'Sillas colgantes estilo columpio',
         'assets/images/aire1.jpeg',
         'Cantidad disponible: 1 (500 unidades)',
         'XR',
-        'Metal'),
+        'Madera color arena'),
     Detalles2(
-        'Producto 2',
-        'Descripción del producto 2',
+        'Hamacas relajantes',
+        '50.000',
+        'Hamacas multicolor comodas en las que se puede relajar y meser comodamente',
         'assets/images/aire2.jpeg',
         'Cantidad disponible: 1 (200 unidades)',
         'MBX3',
         'Madera de bambú'),
     Detalles2(
-        'Producto 3',
-        'Descripción del producto 3',
+        'Sillas de madera color arena',
+        '50.000',
+        'Sillas de madera estilo playeras color arena, son '
+            'muy utiles para eventos al aire libre',
         'assets/images/aire3.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
         'MDR',
         'Madera de roble'),
     Detalles2(
-        'Producto 1',
-        'Descripción del producto 1',
+        'Silla de hierro negro',
+        '50.000',
+        'Silla de hierro de negro utiles para fiestas de jardin',
         'assets/images/aire4.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
         'MDR',
-        'Metal con diseño amaderado'),
+        'Metal con diseño de agujeros'),
     Detalles2(
-        'Producto 2',
-        'Descripción del producto 2',
+        'Silla de hierro con bordado',
+        '50.000',
+        'Silla de hierro de negro utiles para fiestas de jardin, eventos en parques, etc.',
         'assets/images/aire5.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
         'MDR',
         'Metal negro'),
     Detalles2(
-        'Producto 3',
-        'Descripción del producto 3',
+        'Sillas estilo hamaca comodas',
+        '50.000',
+        'Sillas estilo hamacas comodas, utiles para la playa y eventos semiprivados',
         'assets/images/aire6.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
         'MDR',
         'Madera caoba'),
     Detalles2(
-        'Producto 2',
-        'Descripción del producto 2',
+        'Sillas de madera blanca',
+        '50.000',
+        'Sillas de madera simple, color blanco',
         'assets/images/eventos al aire libre.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
         'MDR',
-        'Madera de roble blanco'),
+        'Madera blanca'),
     Detalles2(
-        'Producto 3',
-        'Descripción del producto 3',
+        'Sillas de metal para jardin',
+        '50.000',
+        'Sillas de metal negro, estilo lineal utiles para fiestas de jardin, eventos en parques, etc. ',
         'assets/images/aire7.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
         'MDR',
         'Madera de roble'),
   ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -162,7 +176,7 @@ class CateAire extends StatelessWidget {
               title: Text('Notificaciones'),
               onTap: () {
                 // Navegar a la página de notificaciones
-                Navigator.pop(context);
+                Navigator.pushNamed(context, "/notificaciones");
               },
             ),
             ListTile(
@@ -191,7 +205,7 @@ class CateAire extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      ProductDetailPage(Details: Details2[index]),
+                      ProductDetailPage(Details: Details[index]),
                 ),
               );
             },
@@ -223,7 +237,7 @@ class CateAire extends StatelessWidget {
                         ),
                         SizedBox(height: 4),
                         Text(
-                          products[index].description,
+                          products[index].precio,
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 14,
@@ -244,21 +258,23 @@ class CateAire extends StatelessWidget {
 
 class Sillas {
   final String name;
+  final String precio;
   final String description;
   final String imageUrl;
 
-  Sillas(this.name, this.description, this.imageUrl);
+  Sillas(this.name,this.precio, this.description, this.imageUrl);
 }
 
 class Detalles2 {
   final String name;
+  final String precio;
   final String description;
   final String imageUrl;
   final String unidadProducto;
   final String modelo;
   final String material;
 
-  Detalles2(this.name, this.description, this.imageUrl, this.unidadProducto,
+  Detalles2(this.name, this.precio,  this.description, this.imageUrl, this.unidadProducto,
       this.modelo, this.material);
 }
 
@@ -275,45 +291,9 @@ class ProductDetailPage extends StatelessWidget {
         title: Text('Detalles del Producto'),
         actions: [
           IconButton(
-            icon: Icon(Icons.shopping_cart),
+            icon: Icon(Icons.search),
             onPressed: () {
-              showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    content: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Image.asset(Details.imageUrl),
-                        SizedBox(height: 8),
-                        Text(
-                          Details.name,
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(height: 4),
-                        Text(
-                          Details.description,
-                          style: TextStyle(fontSize: 16),
-                        ),
-                        // Otros detalles del producto...
-                      ],
-                    ),
-                    actions: [
-                      TextButton(
-                        onPressed: () {
-                          // Cerrar el popup
-                          Navigator.pop(context);
-                        },
-                        child: Text('Cerrar'),
-                      ),
-                    ],
-                  );
-                },
-              );
+
             },
           ),
         ],
@@ -340,7 +320,7 @@ class ProductDetailPage extends StatelessWidget {
                   ),
                   SizedBox(height: 8),
                   Text(
-                    'John Doe', // Nombre de usuario
+                    'John Doe',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
@@ -355,7 +335,7 @@ class ProductDetailPage extends StatelessWidget {
               title: Text('Inicio'),
               onTap: () {
                 // Navegar a la página de inicio
-                Navigator.pushNamed(context, "/homepage");
+                Navigator.pushNamed(context, "/homePage");
               },
             ),
             ListTile(
@@ -379,7 +359,7 @@ class ProductDetailPage extends StatelessWidget {
               title: Text('Notificaciones'),
               onTap: () {
                 // Navegar a la página de notificaciones
-                Navigator.pop(context);
+                Navigator.pushNamed(context, "/notificaciones");
               },
             ),
             ListTile(
@@ -402,13 +382,63 @@ class ProductDetailPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Row(
+                    children: [
+                      Text(
+                        Details.name,
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontFamily: 'Open Sans',
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(width: 20),
+                      IconButton(
+                        icon: Icon(Icons.favorite),
+                        onPressed: () {
+                          double price = double.parse(Details.precio);
+                          Favoritos favProduct = Favoritos(name: Details.name, precio: price,
+                              description: Details.description, imageUrl: Details.imageUrl);
+                          Provider.of<FavProvider>(context, listen: false).addToFav(favProduct);
+
+                          showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                content: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Se ha añadido a favoritos',
+                                      style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () {
+                                      // Cerrar el popup
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text('Cerrar', style: TextStyle(color: Colors.black),),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 8),
                   Text(
-                    Details.name,
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontFamily: 'Open Sans',
-                      fontWeight: FontWeight.bold,
-                    ),
+                    Details.precio,
+                    style: TextStyle(fontSize: 16),
                   ),
                   SizedBox(height: 8),
                   Text(
@@ -418,6 +448,7 @@ class ProductDetailPage extends StatelessWidget {
                   Column(
                     children: [
                       Container(
+                        padding: EdgeInsets.all(16.0),
                         width: 400,
                         height: 50,
                         child: Text(
@@ -437,7 +468,9 @@ class ProductDetailPage extends StatelessWidget {
                     width: 400,
                     height: 50,
                     child: FloatingActionButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, "/domicilios");
+                      },
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
                       ),
@@ -458,7 +491,53 @@ class ProductDetailPage extends StatelessWidget {
                     width: 400,
                     height: 50,
                     child: FloatingActionButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        double price = double.parse(Details.precio);
+                        Product product = Product(name: Details.name, precio: price,
+                            description: Details.description, imageUrl: Details.imageUrl);
+                        Provider.of<CartProvider>(context, listen: false).addToCart(product);
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image.asset(Details.imageUrl),
+                                  SizedBox(height: 8),
+                                  Text(
+                                    Details.name,
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  SizedBox(height: 4),
+                                  Text(
+                                    Details.description,
+                                    style: TextStyle(fontSize: 16),
+                                  ),
+                                ],
+                              ),
+                              actions: [
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, "/domicilios");
+                                  },
+                                  child: Text('Alquilar ahora'),
+                                ),
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, "/carrito");
+                                  },
+                                  child: Text('Carrito'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      },
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
                       ),
