@@ -7,33 +7,33 @@ class CateOtros extends StatelessWidget {
   final String userName = 'John Doe';
   final List<Sillas> products = [
     Sillas(
-        'Producto 1', '50.000x40', 'Descripción del producto 1', 'assets/images/otros1.jpeg'),
+        'Silla plastica con decoracion de tela', '50.000x40', 'Descripción del producto 1', 'assets/images/otros1.jpeg'),
     Sillas(
-        'Producto 2', '50.000x40', 'Descripción del producto 2', 'assets/images/otros2.jpeg'),
+        'Silla de madera dorada, con liston', '50.000x40', 'Descripción del producto 2', 'assets/images/otros2.jpeg'),
     Sillas(
-        'Producto 3', '50.000x40', 'Descripción del producto 3', 'assets/images/otros3.jpeg'),
+        'Silla de madera con ramo de rosas', '50.000x40', 'Descripción del producto 3', 'assets/images/otros3.jpeg'),
     Sillas(
-        'Producto 1', '50.000x40', 'Descripción del producto 1', 'assets/images/otros4.jpeg'),
+        'Silla de madera negra con liston dorado', '50.000x40', 'Descripción del producto 1', 'assets/images/otros4.jpeg'),
     Sillas(
-        'Producto 2', '50.000x40', 'Descripción del producto 2', 'assets/images/otros5.jpeg'),
+        'Silla de madera caoba', '50.000x40', 'Descripción del producto 2', 'assets/images/otros5.jpeg'),
     Sillas(
-        'Producto 3', '50.000x40', 'Descripción del producto 3', 'assets/images/otros6.jpeg'),
+        'Silla de plastico estilo vidrio', '50.000x40', 'Descripción del producto 3', 'assets/images/otros6.jpeg'),
     Sillas(
-        'Producto 2', '50.000x40', 'Descripción del producto 2', 'assets/images/otros7.jpeg'),
+        'Silla de carbono plegable', '50.000x40', 'Descripción del producto 2', 'assets/images/otros7.jpeg'),
     Sillas(
-        'Producto 3', '50.000x40', 'Descripción del producto 3', 'assets/images/otros8.jpeg'),
+        'Silla de madera de sicomoro', '50.000x40', 'Descripción del producto 3', 'assets/images/otros8.jpeg'),
   ];
   final List<Detalles> Details = [
     Detalles(
-        'Producto 1',
+        'Silla plastica con decoracion de tela',
         '50.000',
         'Descripción del producto 1',
         'assets/images/otros1.jpeg',
         'Cantidad disponible: 1 (500 unidades)',
         'XR',
-        'Metal'),
+        'Plastico'),
     Detalles(
-        'Producto 2',
+        'Silla de madera dorada, con liston',
         '50.000',
         'Descripción del producto 2',
         'assets/images/otros2.jpeg',
@@ -41,7 +41,7 @@ class CateOtros extends StatelessWidget {
         'MBX3',
         'Madera de bambú'),
     Detalles(
-        'Producto 3',
+        'Silla de madera con ramo de rosas',
         '50.000',
         'Descripción del producto 3',
         'assets/images/otros3.jpeg',
@@ -49,7 +49,7 @@ class CateOtros extends StatelessWidget {
         'MDR',
         'Madera de roble'),
     Detalles(
-        'Producto 1',
+        'Silla de madera negra con liston dorado',
         '50.000',
         'Descripción del producto 1',
         'assets/images/otros4.jpeg',
@@ -57,7 +57,7 @@ class CateOtros extends StatelessWidget {
         'MDR',
         'Metal con diseño amaderado'),
     Detalles(
-        'Producto 2',
+        'Silla de madera caoba',
         '50.000',
         'Descripción del producto 2',
         'assets/images/otros5.jpeg',
@@ -65,7 +65,7 @@ class CateOtros extends StatelessWidget {
         'MDR',
         'Metal negro'),
     Detalles(
-        'Producto 3',
+        'Silla de plastico estilo vidrio',
         '50.000',
         'Descripción del producto 3',
         'assets/images/otros6.jpeg',
@@ -73,7 +73,7 @@ class CateOtros extends StatelessWidget {
         'MDR',
         'Madera caoba'),
     Detalles(
-        'Producto 2',
+        'Silla de carbono plegable',
         '50.000',
         'Descripción del producto 2',
         'assets/images/otros7.jpeg',
@@ -81,13 +81,13 @@ class CateOtros extends StatelessWidget {
         'MDR',
         'Madera de roble blanco'),
     Detalles(
-        'Producto 3',
+        'Silla de madera de sicomoro',
         '50.000',
         'Descripción del producto 3',
         'assets/images/otros8.jpeg',
         'Cantidad disponible: 1 (300 unidades)',
         'MDR',
-        'Madera de roble'),
+        'Madera de sicomoro'),
   ];
 
   @override
@@ -383,7 +383,7 @@ class ProductDetailPage extends StatelessWidget {
                       Text(
                         Details.name,
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 16.5,
                           fontFamily: 'Open Sans',
                           fontWeight: FontWeight.bold,
                         ),
@@ -427,6 +427,11 @@ class ProductDetailPage extends StatelessWidget {
                         },
                       ),
                     ],
+                  ),
+                  SizedBox(height: 8),
+                  Text(
+                    Details.precio,
+                    style: TextStyle(fontSize: 16),
                   ),
                   SizedBox(height: 8),
                   Text(
