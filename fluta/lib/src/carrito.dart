@@ -130,7 +130,9 @@ class Carrito extends StatelessWidget {
             ),
             SizedBox(height: 16.0),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, "/domicilios");
+              },
               style: ElevatedButton.styleFrom(
                 primary: Colors.black, // Cambia el color de fondo
                 shape: RoundedRectangleBorder(
