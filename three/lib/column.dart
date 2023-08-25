@@ -30,11 +30,17 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
+      floatingActionButton: Container(
+        padding: EdgeInsets.only(left: 50, top: 200, right: 0, bottom: 0 ),
+        alignment: Alignment.topLeft,
+        child: Text("ADSO-3/4 2504452", style: TextStyle(color: Colors.black, fontWeight: FontWeight.w900, fontSize: 20), ),
+      ),
       body: Container(
         color: Colors.white,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
