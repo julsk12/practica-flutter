@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
-  static String dy = 'MyRegister';
+  // static String dy = 'MyRegister';
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -40,7 +40,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
