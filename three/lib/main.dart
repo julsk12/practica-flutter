@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:three/column.dart';
+import 'package:three/listaaaa.dart';
+import 'package:three/medieval.dart';
 import 'package:three/row.dart';
 
 void main() {
@@ -25,6 +27,9 @@ class MyApp extends StatelessWidget {
           "/row": (context) => MyRowPage(),
           "/michi": (context) => MyMichiHelado(),
           "/wrong": (context) => WrondaError(),
+          "/lista": (context) => MyListPage(),
+          "/ships": (context) => SweetNight(),
+          "/medievo": (context) => MedievoPage(),
 
         });
   }

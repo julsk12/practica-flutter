@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
-  // static String dy = 'MyRegister';
+
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -13,6 +13,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
+        foregroundColor: Colors.white,
         title: Text(
           'Julieth Sierra',
           style: TextStyle(
@@ -21,14 +22,6 @@ class _MyHomePageState extends State<MyHomePage> {
             fontFamily: 'Open Sans',
           ),
         ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.search),
-            onPressed: () {
-              // Lógica para realizar la búsqueda
-            },
-          ),
-        ],
       ),
       floatingActionButton: Container(
         padding: EdgeInsets.only(left: 50, top: 200, right: 0, bottom: 0 ),
