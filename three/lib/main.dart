@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:three/column.dart';
+import 'package:three/dicckss.dart';
 import 'package:three/listaaaa.dart';
 import 'package:three/medieval.dart';
 import 'package:three/row.dart';
@@ -11,7 +12,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
           "/lista": (context) => MyListPage(),
           "/ships": (context) => SweetNight(),
           "/medievo": (context) => MedievoPage(),
+          "/marry": (context) => MiBoda(),
 
         });
   }

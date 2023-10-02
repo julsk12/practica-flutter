@@ -32,32 +32,32 @@ class _MedievoPageState extends State<MedievoPage> {
         children: <Widget>[
           Container(
             padding: const EdgeInsets.all(8),
-            color: Colors.teal[100],
-            child: const Text("He'd have you all unravel at the"),
+            color: Colors.pink[100],
+            child: const Text("u can with all"),
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            color: Colors.teal[200],
-            child: const Text('Heed not the rabble'),
+            color: Colors.pink[200],
+            child: const Text('keep calm, all be ok'),
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            color: Colors.teal[300],
-            child: const Text('Sound of screams but the'),
+            color: Colors.pink[300],
+            child: const Text('Be ok, not be ok'),
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            color: Colors.teal[400],
-            child: const Text('Who scream'),
+            color: Colors.pink[400],
+            child: const Text('u can scream'),
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            color: Colors.teal[500],
+            color: Colors.pink[500],
             child: const Text('Revolution is coming...'),
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            color: Colors.teal[600],
+            color: Colors.pink[600],
             child: const Text('Revolution, they...'),
           ),
         ],

@@ -36,10 +36,10 @@ class _MyListPageState extends State<MyListPage> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.attach_money_rounded),
-              title: Text('Money money money'),
+              leading: Icon(Icons.card_giftcard_rounded),
+              title: Text('Mis regalos'),
               onTap: () {
-                Navigator.pushNamed(context, "/row");
+                Navigator.pushNamed(context, "/marry");
               },
             ),
             ListTile(

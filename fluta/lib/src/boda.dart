@@ -119,7 +119,7 @@ class CateBodas extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.search),
             onPressed: () {
-              // Lógica para realizar la búsqueda
+
             },
           ),
         ],
@@ -431,7 +431,7 @@ class ProductDetailPage extends StatelessWidget {
                                 actions: [
                                   TextButton(
                                     onPressed: () {
-                                      // Cerrar el popup
+
                                       Navigator.pop(context);
                                     },
                                     child: Text(

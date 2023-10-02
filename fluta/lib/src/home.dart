@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  final String userName =
-      'John Doe'; // Nombre de usuario (puedes obtenerlo dinámicamente)
+  final String userName = 'John Doe';
   static String iwbf = 'home_page';
 
   @override
@@ -22,7 +21,6 @@ class HomePage extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.search),
             onPressed: () {
-              // Lógica para realizar la búsqueda
             },
           ),
         ],
@@ -108,7 +106,6 @@ class HomePage extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                // Navega a la segunda página cuando se presione la primera imagen
                 Navigator.pushNamed(context, "/bodas");
               },
               child: Stack(
@@ -117,7 +114,7 @@ class HomePage extends StatelessWidget {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(15),
                     child: Image.asset(
-                      'assets/images/bodas.jpeg', // Ruta y nombre de la primera imagen
+                      'assets/images/bodas.jpeg',
                       width: 330,
                       height: 170,
                       fit: BoxFit.cover,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 
-class LoginPage extends StatelessWidget {
+class LoadingPage extends StatelessWidget {
   static String id = 'login_page';
 
   @override
@@ -14,7 +14,7 @@ class LoginPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/images/loginregister.jpeg',
+              'assets/img/Analyze-fotor-20230928181033.png',
               height: 300,
               width: double.infinity,
               fit: BoxFit.cover,
@@ -22,7 +22,7 @@ class LoginPage extends StatelessWidget {
             Padding(
               padding: EdgeInsets.all(16.0),
               child: Text(
-                'Bienvenido a EasySeat. ',
+                'Bienvenido a B&S. ',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.5,
@@ -35,7 +35,7 @@ class LoginPage extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 25),
               child: Text(
                 'Inicia sesión para acceder a tu cuenta y disfrutar de nuestros servicios '
-                    'de alquiler de sillas.',
+                    'de gestión y contabilidad',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 20,
@@ -55,13 +55,17 @@ class LoginPage extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushNamed(context, "/register");
                     },
-                    child: Text('Registrarse'),
+                    child: Text('Registrarse', style: TextStyle(color: Colors.black,),),
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.black, // Color de fondo del botón
-                      onPrimary: Colors.white, // Color del texto del botón
+                      primary: Color(0xFFFEC9FF), // Color de fondo del botón
+                      onPrimary: Color(0xFFA8A4FF), // Color del texto del botón
                       textStyle: TextStyle(
                         fontSize: 20,
                         fontFamily: 'Open Sans',
+                      ),
+                      side: BorderSide(
+                        color: Color(0xFFFEC9FF), // Color del borde del botón
+                        width: 2.0, // Ancho del borde
                       ),
                       padding:
                           EdgeInsets.symmetric(vertical: 12, horizontal: 20),
@@ -76,13 +80,18 @@ class LoginPage extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushNamed(context, "/loginPage");
                     },
-                    child: Text('Login'),
+                    child: Text('Login',
+                    style: TextStyle(color: Colors.black),),
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.black, // Color de fondo del botón
-                      onPrimary: Colors.white, // Color del texto del botón
+                      primary: Color(0xFFFEC9FF), // Color de fondo del botón
+                      onPrimary: Color(0xFF658762),
                       textStyle: TextStyle(
                         fontSize: 20,
                         fontFamily: 'Open Sans',
+                      ),// Color del texto del botón
+                      side: BorderSide(
+                        color: Color(0xFFFEC9FF), // Color del borde del botón
+                        width: 2.0, // Ancho del borde
                       ),
                       padding:
                           EdgeInsets.symmetric(vertical: 12, horizontal: 20),
